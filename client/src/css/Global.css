@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.03em;
+    color: black;
+}
+
+:root {
+    --branco: #fffffe;
+    --azulClaro: #d8eefe;
+    --azulEscuro: #094067;
+}
+
+body {
+    background-color: var(--branco);
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrap {
+    align-items: center;
+    text-align: justify;
+    overflow: auto;
+    padding-left: 120px;
+}
+
+.page-content {
+    margin: 4vh 4vw;
+    border: 1px solid rgba(0, 0, 0, 0.377);
+    padding: 55px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.103);
+}
+
+h2 {
+    font-size: 1.2em;
+    text-shadow: 2px 2px 2px rgba(255, 254, 254, 0.39);
+    text-align: center;
+    text-decoration: underline solid var(--azulEscuro) 5px;
+    margin-bottom: 30px;
+}
+
+*::selection {
+    background: var(--azulEscuro);
+    color: var(--branco);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+a {
+    text-decoration: none;
+    color: var(--azulEscuro);
+}
+  
+a:visited {
+    color: var(--azulEscuro);
+}
+  
+a:hover {
+    color: #0b578d;
+    transition-duration: 0.3s;
+}
