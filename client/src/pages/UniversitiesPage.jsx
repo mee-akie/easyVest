@@ -1,12 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 
 // Import components
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 
+// Import data
+import {usp_data, general_data, enem_data, ifsp_data, ita_data, ufabc_data, ufscar_data, unesp_data, unicamp_data, unifesp_data} from "../data/universities";
+
 import "../css/pages/UniversitiesPage.css";
 
 const UniversitiesPage = () =>{
+
+    const [content, setContent] = useState(general_data)
+
+    const handleChange = (data) => {
+        setContent(data)
+    }
 
     return (
         <>
@@ -18,23 +27,21 @@ const UniversitiesPage = () =>{
 
                     <div className="uni-menu">
                         <div className="uni-menu-content">
-                            <div className="uni-menu-item">Estatísticas gerais</div>
-                            <div className="uni-menu-item">ENEM</div>
-                            <div className="uni-menu-item">UFABC</div>
-                            <div className="uni-menu-item">USP</div>
-                            <div className="uni-menu-item">UFSCAR</div>
-                            <div className="uni-menu-item">UNICAMP</div>
-                            <div className="uni-menu-item">IFSP</div>
-                            <div className="uni-menu-item">UNESP</div>
-                            <div className="uni-menu-item">UNIFESP</div>
-                            <div className="uni-menu-item">ITA</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(general_data)}>Estatísticas gerais</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(enem_data)}>ENEM</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(ufabc_data)}>UFABC</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(usp_data)}>USP</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(ufscar_data)}>UFSCAR</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(unicamp_data)}>UNICAMP</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(ifsp_data)}>IFSP</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(unesp_data)}>UNESP</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(unifesp_data)}>UNIFESP</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(ita_data)}>ITA</div>
                         </div>
                     </div>
 
                     <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu rutrum nisi. Maecenas nisi ligula, dapibus et lorem ut, luctus rutrum sapien. Donec consectetur fermentum lorem, non rutrum tortor ullamcorper sed. Integer scelerisque urna et lorem vulputate commodo. Aliquam pulvinar arcu a tellus posuere tempor. Donec sit amet fermentum justo. Fusce pellentesque a purus quis iaculis. In venenatis ante ac lectus posuere, et scelerisque ipsum ultrices. Phasellus mollis eget magna vel porta. Pellentesque tincidunt massa non dui lacinia imperdiet. Praesent porta mattis ornare. Quisque ultricies magna luctus justo venenatis, varius ullamcorper mi ultrices. Aliquam varius at lorem ac tristique.
-                    Sed et dui nunc. Donec porta diam nibh, sit amet suscipit libero mattis vel. Mauris luctus lorem non nunc tristique elementum. Nunc malesuada, quam ut varius mollis, risus ex bibendum lorem, a tempor tortor risus sed libero. Sed sit amet purus turpis. Etiam cursus nisl eros, eget blandit lectus fringilla sit amet. Pellentesque mollis diam at purus venenatis dapibus. Etiam tincidunt venenatis fringilla. Nunc risus ipsum, tristique eget nulla quis, porttitor elementum tellus. In aliquet consectetur arcu quis posuere. Praesent ante dui, elementum et orci sodales, pellentesque varius lorem.
-                    Quisque augue urna, vulputate vel ex id, molestie faucibus orci. Donec vulputate condimentum sem. Ut massa velit, posuere sed sollicitudin quis, rutrum et dui. Pellentesque eleifend feugiat sem non sollicitudin. Etiam ac enim vel erat mollis scelerisque vitae et sapien. Aliquam porttitor rutrum ex, et laoreet urna. Suspendisse potenti. Aliquam at urna vel ipsum pharetra vestibulum. Nullam vel turpis nisi. Duis iaculis est arcu, vitae feugiat libero aliquam vitae. Curabitur venenatis imperdiet dignissim. Pellentesque nec sapien quis dolor tempor placerat. Proin fermentum egestas pretium. Nullam eleifend hendrerit nisi ut interdum. Aenean sed varius est.
+                    {content}
                     </div>
 
                 </div>
