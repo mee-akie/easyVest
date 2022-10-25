@@ -71,7 +71,7 @@ public class UserController {
         User targetUser = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario com id '" + id + "' nao foi encontrado"));
 
-        targetUser.setNome(updatedUser.getName());
+        targetUser.setName(updatedUser.getName());
         targetUser.setEmail(updatedUser.getEmail());
 
         userRepository.save(targetUser);

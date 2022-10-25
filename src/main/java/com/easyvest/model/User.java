@@ -39,11 +39,11 @@ public class User {
         this.email = email;
     }
 
-    public void setNome(String name) {
+    public void setName(String name) {
         this.name= name;
     }
 
-    public void setSenha(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 }
