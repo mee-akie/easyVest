@@ -1,10 +1,10 @@
 package com.easyvest.repository;
 
-import com.easyvest.model.Usuario;
+import com.easyvest.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RepositorioUsuario extends JpaRepository<Usuario, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 }
 

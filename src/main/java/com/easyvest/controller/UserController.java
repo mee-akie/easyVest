@@ -1,8 +1,8 @@
 package com.easyvest.controller;
 
 import com.easyvest.exception.ResourceNotFoundException;
-import com.easyvest.model.Usuario;
-import com.easyvest.repository.RepositorioUsuario;
+import com.easyvest.model.User;
+import com.easyvest.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private RepositorioUsuario repositorioUsuario;
+    private UserRepository userRepository;
 
     /**
      * <p>Retorna uma lista com todos os usuarios existentes no banco de dados.</p>
@@ -25,8 +25,8 @@ public class UserController {
      * @return Uma lista (JSON) com todos os usuarios existentes no banco de dados.
      */
     @GetMapping("/listar")
-    public List<Usuario> getAllUsers(HttpServletRequest request) {
-        return repositorioUsuario.findAll();
+    public List<User> getAllUsers(HttpServletRequest request) {
+        return userRepository.findAll();
     }
 
     /**
@@ -38,10 +38,10 @@ public class UserController {
      * @throws ResourceNotFoundException
      */
     @GetMapping("/{id}")
-    public ResponseEntity<Usuario> getUserByid(@PathVariable long id) throws ResourceNotFoundException {
-        Usuario dadosUsuario = repositorioUsuario.findById(id)
+    public ResponseEntity<User> getUserByid(@PathVariable long id) throws ResourceNotFoundException {
+        User targetUser = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario com id '" + id + "' nao foi encontrado"));
-        return ResponseEntity.ok().body(dadosUsuario);
+        return ResponseEntity.ok().body(targetUser);
     }
 
     /**
@@ -52,10 +52,10 @@ public class UserController {
      * @param usuario JSON com os dados do novo usuario.
      */
     @PostMapping(path = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Usuario> addUser(@RequestBody Usuario usuario) {
-        repositorioUsuario.save(usuario);
+    public ResponseEntity<User> addUser(@RequestBody User newUser) {
+        userRepository.save(newUser);
 
-        return ResponseEntity.ok(usuario);
+        return ResponseEntity.ok(newUser);
     }
 
     /**
@@ -67,16 +67,16 @@ public class UserController {
      * @throws ResourceNotFoundException
      */
     @PutMapping(path = "/alterarDados/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Usuario> updateUser(@PathVariable long id, @RequestBody Usuario dadosUsuario) throws ResourceNotFoundException {
-        Usuario usuarioAlterado = repositorioUsuario.findById(id)
+    public ResponseEntity<User> updateUser(@PathVariable long id, @RequestBody User updatedUser) throws ResourceNotFoundException {
+        User targetUser = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario com id '" + id + "' nao foi encontrado"));
 
-        usuarioAlterado.setNome(dadosUsuario.getNome());
-        usuarioAlterado.setEmail(dadosUsuario.getEmail());
+        targetUser.setName(updatedUser.getName());
+        targetUser.setEmail(updatedUser.getEmail());
 
-        repositorioUsuario.save(usuarioAlterado);
+        userRepository.save(targetUser);
 
-        return ResponseEntity.ok(usuarioAlterado);
+        return ResponseEntity.ok(targetUser);
     }
 
     /**
@@ -86,7 +86,7 @@ public class UserController {
      */
     @DeleteMapping("/remover/{id}")
     public ResponseEntity<Long> deleteUserById(@PathVariable Long id) {
-        repositorioUsuario.deleteById(id);
+        userRepository.deleteById(id);
 
         return ResponseEntity.ok(id);
     }

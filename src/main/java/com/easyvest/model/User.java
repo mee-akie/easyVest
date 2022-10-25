@@ -3,7 +3,7 @@ package com.easyvest.model;
 import javax.persistence.*;
 
 @Entity
-public class Usuario {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,11 +12,11 @@ public class Usuario {
     @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false)
-    private String nome;
+    private String name;
     @Column(nullable = false)
-    private String senha;
+    private String password;
 
-    public Usuario() {
+    public User() {
     }
 
     public Long getId() {
@@ -27,24 +27,24 @@ public class Usuario {
         return email;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getPassword() {
+        return password;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name= name;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
 
