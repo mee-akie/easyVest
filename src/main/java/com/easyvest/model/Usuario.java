@@ -8,43 +8,57 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private Long id;
+    private Long usuario_id;
+
     @Column(nullable = false, unique = true)
-    private String email;
+    private String usuario_login;
+
     @Column(nullable = false)
-    private String nome;
+    private String usuario_nome;
+
     @Column(nullable = false)
-    private String senha;
+    private String usuario_senha;
+
+    @Column(nullable = false)
+    private Boolean usuario_premium;
 
     public Usuario() {
     }
 
     public Long getId() {
-        return id;
+        return usuario_id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLogin() {
+        return usuario_login;
     }
 
     public String getNome() {
-        return nome;
+        return usuario_nome;
     }
 
     public String getSenha() {
-        return senha;
+        return usuario_senha;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public Boolean getPrermium() {
+        return usuario_premium;
+    }
+
+    public void setLogin(String login) {
+        this.usuario_login = login;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.usuario_nome = nome;
     }
 
     public void setSenha(String senha) {
-        this.senha = senha;
+        this.usuario_senha = senha;
+    }
+
+    public void setPremium(Boolean premium){
+        this.usuario_premium = premium;
     }
 }
 

@@ -72,7 +72,7 @@ public class UserController {
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario com id '" + id + "' nao foi encontrado"));
 
         usuarioAlterado.setNome(dadosUsuario.getNome());
-        usuarioAlterado.setEmail(dadosUsuario.getEmail());
+        usuarioAlterado.setLogin(dadosUsuario.getLogin());
 
         repositorioUsuario.save(usuarioAlterado);
 
