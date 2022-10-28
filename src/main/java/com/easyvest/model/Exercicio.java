@@ -16,6 +16,10 @@ public class Exercicio {
     @Column(nullable = false, length = 1)
     private Character exercicio_resposta;
 
+    @ManyToOne
+    @JoinColumn(name = "tema_id")
+    private Tema tema;
+
     public Long getId() {
         return exercicio_id;
     }
@@ -28,11 +32,19 @@ public class Exercicio {
         return exercicio_resposta;
     }
 
+    public Tema getTema() {
+        return tema;
+    }
+
     public void setTexto(String exercicio_texto) {
         this.exercicio_texto = exercicio_texto;
     }
 
     public void setResposta(Character exercicio_resposta) {
         this.exercicio_resposta = exercicio_resposta;
+    }
+
+    public void setTema(Tema tema) {
+        this.tema = tema;
     }
 }

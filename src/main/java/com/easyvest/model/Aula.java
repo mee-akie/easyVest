@@ -18,6 +18,10 @@ public class Aula {
     @Column(nullable = false, length = 30)
     private String aula_canal;
 
+    @ManyToOne
+    @JoinColumn(name = "tema_id")
+    private Tema tema;
+
     public Long getId() {
         return aula_id;
     }
@@ -34,6 +38,10 @@ public class Aula {
         return aula_canal;
     }
 
+    public Tema getTema() {
+        return tema;
+    }
+
     public void setTitulo(String aula_titulo) {
         this.aula_titulo = aula_titulo;
     }
@@ -44,5 +52,9 @@ public class Aula {
 
     public void setCanal(String aula_canal) {
         this.aula_canal = aula_canal;
+    }
+
+    public void setTema(Tema tema) {
+        this.tema = tema;
     }
 }

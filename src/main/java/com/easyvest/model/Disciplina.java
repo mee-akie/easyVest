@@ -1,5 +1,7 @@
 package com.easyvest.model;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,12 +15,28 @@ public class Disciplina {
     @Column(nullable = false, length = 30)
     private String disciplina_nome;
 
+    @OneToMany(mappedBy = "disciplina")
+    private List<Tema> temas;
+
+    @OneToMany(mappedBy = "disciplina")
+    private List<Lista> listas;
+
+    public Disciplina(){}
+
     public Long getId() {
         return disciplina_id;
     }
 
     public String getNome() {
         return disciplina_nome;
+    }
+
+    public List<Tema> getTemas() {
+        return temas;
+    }
+
+    public List<Lista> getListas() {
+        return listas;
     }
 
     public void setNome(String disciplina_nome) {
