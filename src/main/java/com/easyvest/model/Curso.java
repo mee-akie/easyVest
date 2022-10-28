@@ -3,6 +3,7 @@ package com.easyvest.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "curso")
 public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

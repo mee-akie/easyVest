@@ -3,6 +3,7 @@ package com.easyvest.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "universidade")
 public class Universidade {
 
     @Id

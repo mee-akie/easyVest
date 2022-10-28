@@ -5,6 +5,7 @@ import java.sql.Date;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "vestibular")
 public class Vestibular {
 
     @Id

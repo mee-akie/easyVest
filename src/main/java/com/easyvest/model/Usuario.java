@@ -3,6 +3,7 @@ package com.easyvest.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "usuario")
 public class Usuario {
 
     @Id
@@ -10,13 +11,13 @@ public class Usuario {
     @Column
     private Long usuario_id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 30)
     private String usuario_login;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 30)
     private String usuario_nome;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 200)
     private String usuario_senha;
 
     @Column(nullable = false)
