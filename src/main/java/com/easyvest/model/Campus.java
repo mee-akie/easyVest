@@ -1,5 +1,7 @@
 package com.easyvest.model;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -20,6 +22,12 @@ public class Campus {
     @JoinColumn(name = "universidade_id")
     private Universidade universidade;
 
+    @ManyToMany
+    @JoinTable(name = "campus_curso", joinColumns = @JoinColumn(name = "campus_id"), inverseJoinColumns = @JoinColumn(name = "curso_id"))
+    public List<Curso> cursos;
+
+    public Campus() {}
+
     public Long getId() {
         return campus_id;
     }
@@ -34,6 +42,10 @@ public class Campus {
 
     public Universidade getUniversidade() {
         return universidade;
+    }
+
+    public List<Curso> getCursos() {
+        return cursos;
     }
 
     public void setNome(String campus_nome) {

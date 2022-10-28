@@ -1,5 +1,7 @@
 package com.easyvest.model;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -20,6 +22,11 @@ public class Exercicio {
     @JoinColumn(name = "tema_id")
     private Tema tema;
 
+    @ManyToMany(mappedBy = "lista_exercicio")
+    private List<Lista> listas;
+
+    public Exercicio() {}
+
     public Long getId() {
         return exercicio_id;
     }
@@ -34,6 +41,10 @@ public class Exercicio {
 
     public Tema getTema() {
         return tema;
+    }
+
+    public List<Lista> getListas() {
+        return listas;
     }
 
     public void setTexto(String exercicio_texto) {

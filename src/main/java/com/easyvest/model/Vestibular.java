@@ -1,6 +1,7 @@
 package com.easyvest.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -22,6 +23,11 @@ public class Vestibular {
     @Column(nullable = false, length = 100)
     private String vestibular_link;
 
+    @ManyToMany(mappedBy = "universidade_vestibular")
+    private List<Universidade> universidades;
+
+    public Vestibular() {}
+
     public Date getData() {
         return vestibular_data;
     }
@@ -36,6 +42,10 @@ public class Vestibular {
 
     public String getNome() {
         return vestibular_nome;
+    }
+
+    public List<Universidade> getUniversidades() {
+        return universidades;
     }
 
     public void setData(Date vestibular_data) {

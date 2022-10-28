@@ -1,5 +1,7 @@
 package com.easyvest.model;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,6 +19,10 @@ public class Lista {
     @JoinColumn(name = "disciplina_id")
     private Disciplina disciplina;
 
+    @ManyToMany
+    @JoinTable(name = "lista_exercicio", joinColumns = @JoinColumn(name = "lista_id"), inverseJoinColumns = @JoinColumn(name = "exercicio_id"))
+    public List<Curso> exercicios;
+
     public Lista(){}
 
     public Long getId() {
@@ -29,6 +35,10 @@ public class Lista {
 
     public Disciplina getDisciplina() {
         return disciplina;
+    }
+
+    public List<Curso> getExercicios() {
+        return exercicios;
     }
 
     public void setNome(String lista_nome) {

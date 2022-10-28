@@ -19,6 +19,12 @@ public class Universidade {
     @OneToMany(mappedBy = "universidade")
     private List<Campus> campi;
 
+    @ManyToMany
+    @JoinTable(name = "universidade_vestibular", joinColumns = @JoinColumn(name = "universidade_id"), inverseJoinColumns = @JoinColumn(name = "vestibular_id"))
+    public List<Curso> vestibulares;
+
+    public Universidade() {}
+
     public Long getId() {
         return universidade_id;
     }
@@ -29,6 +35,10 @@ public class Universidade {
 
     public List<Campus> getCampi() {
         return campi;
+    }
+    
+    public List<Curso> getVestibulares() {
+        return vestibulares;
     }
 
     public void setNome(String nome) {
