@@ -3,63 +3,63 @@ package com.easyvest.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "usuarios")
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private Long usuario_id;
+    private Long id;
 
     @Column(nullable = false, unique = true, length = 30)
-    private String usuario_login;
+    private String login;
 
     @Column(nullable = false, length = 30)
-    private String usuario_nome;
+    private String nome;
 
     @Column(nullable = false, length = 200)
-    private String usuario_senha;
+    private String senha;
 
     @Column(nullable = false)
-    private Boolean usuario_premium;
+    private Boolean premium;
 
     public Usuario() {
     }
 
     public Long getId() {
-        return usuario_id;
+        return id;
     }
 
     public String getLogin() {
-        return usuario_login;
+        return login;
     }
 
     public String getNome() {
-        return usuario_nome;
+        return nome;
     }
 
     public String getSenha() {
-        return usuario_senha;
+        return senha;
     }
 
     public Boolean getPrermium() {
-        return usuario_premium;
+        return premium;
     }
 
     public void setLogin(String login) {
-        this.usuario_login = login;
+        this.login = login;
     }
 
     public void setNome(String nome) {
-        this.usuario_nome = nome;
+        this.nome = nome;
     }
 
     public void setSenha(String senha) {
-        this.usuario_senha = senha;
+        this.senha = senha;
     }
 
     public void setPremium(Boolean premium){
-        this.usuario_premium = premium;
+        this.premium = premium;
     }
 }
 
