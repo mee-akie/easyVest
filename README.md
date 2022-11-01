@@ -1,4 +1,4 @@
-# Build da aplicação
+# Build da aplicação (SEM DOCKER)
 
 ## Frontend
 
@@ -10,7 +10,7 @@ Rode
 
 A aplicação estará escutando em [http://localhost:3000/](http://localhost:3000/)
 
-## Backend
+## Backend (depreciado => use o docker como mostra o passo "Build da aplicação (COM DOCKER)")
 
 Rode
 
@@ -20,28 +20,19 @@ Rode
 
 A aplicação estará escutando em [http://localhost:8080/](http://localhost:8080/)
 
-## Banco de Dados (provisorio)
+# Build da aplicação (COM DOCKER)
+Instale o [docker](https://docs.docker.com/get-docker/) caso não o tenha.
 
-* Nome do banco: **easyvest**
-* Url: **jdbc:postgresql://localhost:5432/easyvest**
-* Username: **easyvestadmin**
-* Password: **easyvestadmin**
+### 1. Build das imagens do Postgresql e da aplicação do backend
 
-### Windows
+Para a imagem do Postgresql entre no diretorio `/docker` e rode:
+* `docker build -t postgres-image -f Dockerfile.db .`
 
-Abra o shell do postgres (psql) e rode
+Para a imagem da aplicação do backend rode:
+* `mvn clean package`
+* `docker build -t easyvestbackend-image -f Dockerfile.backend .`
 
-2. `CREATE USER easyvestadmin WITH ENCRYPTED PASSWORD 'easyvestadmin';`
-3. `CREATE DATABASE easyvest WITH OWNER = easyvestadmin;`
-4. `GRANT ALL PRIVILEGES ON DATABASE easyvest TO easyvestadmin;`
+### 2. Subindo o docker-compose
+Basta rodar `docker-compose up` para subir o docker-compose. E rode `docker-compose down` para para-lo.
 
-(ou crie o banco e o usuario usando o PgAdmin)
-
-### Linux
-
-Rode
-
-1. `sudo -u postgres psql`
-2. `CREATE USER easyvestadmin WITH ENCRYPTED PASSWORD 'easyvestadmin';`
-3. `CREATE DATABASE easyvest WITH OWNER = easyvestadmin;`
-4. `GRANT ALL PRIVILEGES ON DATABASE easyvest TO easyvestadmin;`
+Ao subir o docker-compose a aplicação do backend estará escutando em [http://localhost:8080/](http://localhost:8080/) e toda a configuração do banco de dados já será feita. Ou seja, não há necessidade de ter o banco de dados localmente.
