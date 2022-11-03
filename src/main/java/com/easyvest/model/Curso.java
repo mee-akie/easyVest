@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "curso")
+@Table(name = "cursos")
 public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class Curso {
     @Column(nullable = false, length = 50)
     private String curso_nome;
 
-    @ManyToMany(mappedBy = "campus_curso")
+    @ManyToMany(mappedBy = "cursos")
     private List<Campus> campi;
 
     public Curso() {}

@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "vestibular")
+@Table(name = "vestibulares")
 public class Vestibular {
 
     @Id
@@ -23,7 +23,7 @@ public class Vestibular {
     @Column(nullable = false, length = 100)
     private String vestibular_link;
 
-    @ManyToMany(mappedBy = "universidade_vestibular")
+    @ManyToMany(mappedBy = "vestibulares")
     private List<Universidade> universidades;
 
     public Vestibular() {}

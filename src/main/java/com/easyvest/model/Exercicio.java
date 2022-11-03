@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "exercicio")
+@Table(name = "exercicios")
 public class Exercicio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,7 @@ public class Exercicio {
     @JoinColumn(name = "tema_id")
     private Tema tema;
 
-    @ManyToMany(mappedBy = "lista_exercicio")
+    @ManyToMany(mappedBy = "exercicios")
     private List<Lista> listas;
 
     public Exercicio() {}
