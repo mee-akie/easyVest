@@ -3,12 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import "../css/components/Sidebar.css"
 
-// Import logos
-import areaDoAluno from "../img/aluno.png";
-import agenda from "../img/agenda.png";
-import universidades from "../img/universidades.png";
-import simulados from "../img/simulados.png";
-import mapa from "../img/mapa.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Sidebar = () => {
 
@@ -21,27 +16,27 @@ const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="sidebar-item" onClick={() => handleItemCLick('/')}>
-                <img src={areaDoAluno} alt="" />
+                <FontAwesomeIcon icon="graduation-cap" />
                 <div>Área do Aluno</div>
             </div>
 
             <div className="sidebar-item" onClick={() => handleItemCLick('/calendar')}>
-                <img src={agenda} alt="" />
+                <FontAwesomeIcon icon="calendar-alt" />
                 <div>Agenda</div>
             </div>
 
             <div className="sidebar-item" onClick={() => handleItemCLick('/universities')}>
-                <img src={universidades} alt="" />
+                <FontAwesomeIcon icon="building-columns" />
                 <div>Universidades</div>
             </div>
 
             <div className="sidebar-item" onClick={() => handleItemCLick('/questions')}>
-                <img src={simulados} alt="" />
+                <FontAwesomeIcon icon="book" />
                 <div>Simulados</div>
             </div>
 
             <div className="sidebar-item" onClick={() => handleItemCLick('/map')}>
-                <img src={mapa} alt="" />
+                <FontAwesomeIcon icon="map-location-dot" />
                 <div>Mapa</div>
             </div>
 

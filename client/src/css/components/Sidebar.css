@@ -14,22 +14,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
 }
 
-.sidebar-item img {
-    align-items: center;
-    justify-content: center;
-    width: 48px;
+.sidebar-item {
+    color: var(--branco);
+    font-size: 2.2rem;
 }
 
 .sidebar-item div {
     font-size: 14px;
-    color: var(--branco);
 }
 
-.sidebar-item div:hover{
-    color: var(--azulClaro);
-    transition-duration: 0.3s;
+.sidebar-item:hover {
+    color: var(--amarelo); 
     cursor: pointer;
 }
 
@@ -45,7 +43,7 @@
         display: none;
     }
 
-    .sidebar-item img {
-        width: 2.5rem;
+    .sidebar-item svg {
+        font-size: 2rem;
     }
 }

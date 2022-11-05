@@ -2,19 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
 *, *::before, *::after {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.03em; color: black;
     box-sizing: border-box;
 }
+
 :root {
     --branco: #fffffe;
     --azulClaro: #d8eefe;
     --azulEscuro: #094067;
+    --amarelo: #ffd832;
 
     --sidebar-width: 8rem;
 }
 
 body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.03em; color: black;
     background-color: var(--branco);
     margin: 0;
 }
@@ -69,7 +71,6 @@ h2 {
 
 a {
     text-decoration: none;
-    color: var(--azulEscuro);
 }
   
 a:visited {
