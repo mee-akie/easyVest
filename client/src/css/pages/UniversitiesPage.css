@@ -32,3 +32,37 @@
     transition-duration: 0.3s;
     cursor: pointer;
 }
+
+/* Vestibulares */
+
+.vest-info > h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--azulEscuro);
+}
+
+.vest-info > h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.vest-info > p {
+    font-size: 0.9em;
+    text-align: justify;
+}
+
+.vest-info > ul {
+    font-size: 0.9em;
+    text-align: justify;
+    margin: 2rem 0;
+}
+
+.vest-info > ul li {
+    margin: 1rem 0;
+}
+
+.vest-info > ul li strong {
+    margin-right: 0.8rem;
+    font-size: 0.9em;
+}
