@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Import pages
 import StudentHome from "./pages/StudentHome";
@@ -11,15 +11,20 @@ import MapPage from "./pages/MapPage";
 
 import "./css/Global.css";
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
+library.add(fas);
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element = {<StudentHome/>}/>
-        <Route path="/calendar" element = {<CalendarPage/>}/>
-        <Route path="/universities" element = {<UniversitiesPage/>}/>
-        <Route path="/questions" element = {<QuestionsPage/>}/>
-        <Route path="/map" element = {<MapPage/>}/>
+        <Route path="/" element={<StudentHome />} />
+        <Route path="/calendar" element={<CalendarPage />} />
+        <Route path="/universities" element={<UniversitiesPage />} />
+        <Route path="/questions" element={<QuestionsPage />} />
+        <Route path="/map" element={<MapPage />} />
       </Routes>
     </Router>
   </React.StrictMode>,

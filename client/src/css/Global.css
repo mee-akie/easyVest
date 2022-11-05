@@ -1,33 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
-* {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.03em;
-    color: black;
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 :root {
     --branco: #fffffe;
     --azulClaro: #d8eefe;
     --azulEscuro: #094067;
+    --amarelo: #ffd832;
+
+    --sidebar-width: 8rem;
 }
 
 body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.03em; color: black;
     background-color: var(--branco);
     margin: 0;
-    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
 }
 
 .page-wrap {
-    align-items: center;
-    text-align: justify;
-    overflow: auto;
-    padding-left: 120px;
+    margin-left: var(--sidebar-width);
+    width: 100%;
 }
 
 .page-content {
-    margin: 4vh 4vw;
+    margin: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.377);
     padding: 55px;
     border-radius: 10px;
@@ -65,7 +71,6 @@ h2 {
 
 a {
     text-decoration: none;
-    color: var(--azulEscuro);
 }
   
 a:visited {
@@ -75,4 +80,20 @@ a:visited {
 a:hover {
     color: #0b578d;
     transition-duration: 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .page-wrap {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .page-content {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
 }

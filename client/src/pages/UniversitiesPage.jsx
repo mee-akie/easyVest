@@ -1,15 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 // Import components
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 
 // Import data
-import {usp_data, general_data, enem_data, ifsp_data, ita_data, ufabc_data, ufscar_data, unesp_data, unicamp_data, unifesp_data} from "../data/universities";
+import { usp_data, general_data, enem_data, ifsp_data, ita_data, ufabc_data, ufscar_data, unesp_data, unicamp_data, unifesp_data } from "../data/universities";
 
 import "../css/pages/UniversitiesPage.css";
 
-const UniversitiesPage = () =>{
+const UniversitiesPage = () => {
 
     const [content, setContent] = useState(general_data)
 
@@ -18,10 +18,10 @@ const UniversitiesPage = () =>{
     }
 
     return (
-        <>
-            <Sidebar/>
+        <div class="wrapper">
+            <Sidebar />
             <div className="page-wrap">
-                <Header/>
+                <Header />
                 <div className="page-content">
                     <h2>Universidades</h2>
 
@@ -41,12 +41,12 @@ const UniversitiesPage = () =>{
                     </div>
 
                     <div>
-                    {content}
+                        {content}
                     </div>
 
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

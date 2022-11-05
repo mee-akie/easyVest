@@ -4,18 +4,18 @@ import React from "react";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 
-const QuestionsPage = () =>{
+const QuestionsPage = () => {
 
     return (
-        <>
-            <Sidebar/>
+        <div class="wrapper">
+            <Sidebar />
             <div className="page-wrap">
-                <Header/>
+                <Header />
                 <div className="page-content">
                     <h2>Simulados</h2>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

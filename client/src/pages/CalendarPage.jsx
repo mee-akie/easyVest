@@ -5,18 +5,18 @@ import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import { getAllUsers } from "../services/api";
 
-const CalendarPage = () =>{
+const CalendarPage = () => {
 
     return (
-        <>
-            <Sidebar/>
+        <div class="wrapper">
+            <Sidebar />
             <div className="page-wrap">
-                <Header/>
+                <Header />
                 <div className="page-content">
                     <h2>Agenda</h2>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
