@@ -3,7 +3,7 @@
     width: 120px;
     height: 100vh;
     margin: 0 auto;
-    position: absolute;
+    position: fixed;
 }
 
 .sidebar-content {
