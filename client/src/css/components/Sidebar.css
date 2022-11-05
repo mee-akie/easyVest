@@ -20,7 +20,6 @@
     align-items: center;
     justify-content: center;
     width: 48px;
-    height: 48px;
 }
 
 .sidebar-item div {
@@ -39,6 +38,14 @@
         position: relative;
         flex-direction: row;
         width: 100%;
-        padding: 1rem 2rem;
+        padding: 1rem 2.2rem;
+    }
+
+    .sidebar-item div {
+        display: none;
+    }
+
+    .sidebar-item img {
+        width: 2.5rem;
     }
 }

@@ -6,7 +6,6 @@
     font-size: 1.03em; color: black;
     box-sizing: border-box;
 }
-
 :root {
     --branco: #fffffe;
     --azulClaro: #d8eefe;
@@ -90,5 +89,10 @@ a:hover {
     .page-wrap {
         flex-direction: column;
         margin-left: 0;
+    }
+
+    .page-content {
+        margin: 1rem;
+        padding: 1.5rem;
     }
 }
