@@ -1,8 +1,7 @@
 package com.easyvest.model;
 
-import java.util.List;
-
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "campus")
@@ -26,7 +25,8 @@ public class Campus {
     @JoinTable(name = "campus_curso", joinColumns = @JoinColumn(name = "campus_id"), inverseJoinColumns = @JoinColumn(name = "curso_id"))
     public List<Curso> cursos;
 
-    public Campus() {}
+    public Campus() {
+    }
 
     public Long getId() {
         return campus_id;

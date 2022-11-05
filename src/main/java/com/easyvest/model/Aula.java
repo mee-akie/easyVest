@@ -1,4 +1,5 @@
 package com.easyvest.model;
+
 import javax.persistence.*;
 
 @Entity
@@ -22,7 +23,8 @@ public class Aula {
     @JoinColumn(name = "tema_id")
     private Tema tema;
 
-    public Aula() {}
+    public Aula() {
+    }
 
     public Long getId() {
         return aula_id;

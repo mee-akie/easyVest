@@ -1,7 +1,6 @@
 package com.easyvest.model;
 
 import javax.persistence.*;
-
 import java.util.List;
 
 @Entity
@@ -25,7 +24,8 @@ public class Tema {
     @OneToMany(mappedBy = "tema")
     private List<Exercicio> exercicios;
 
-    public Tema() {}
+    public Tema() {
+    }
 
     public Long getId() {
         return tema_id;

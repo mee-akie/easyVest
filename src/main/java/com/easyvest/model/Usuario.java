@@ -1,5 +1,7 @@
 package com.easyvest.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,57 +11,56 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private Long id;
+    private Long usuario_id;
 
     @Column(nullable = false, unique = true, length = 30)
-    private String login;
+    private String usuario_login;
 
     @Column(nullable = false, length = 30)
-    private String nome;
+    private String usuario_nome;
 
     @Column(nullable = false, length = 200)
-    private String senha;
+    private String usuario_senha;
 
     @Column(nullable = false)
-    private Boolean premium;
+    private boolean usuario_premium;
 
     public Usuario() {
     }
 
     public Long getId() {
-        return id;
+        return usuario_id;
     }
 
     public String getLogin() {
-        return login;
+        return usuario_login;
     }
 
     public String getNome() {
-        return nome;
+        return usuario_nome;
     }
 
     public String getSenha() {
-        return senha;
+        return usuario_senha;
     }
 
-    public Boolean getPrermium() {
-        return premium;
+    public Boolean getPremium() {
+        return usuario_premium;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setLogin(@NotNull String login) {
+        this.usuario_login = login;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(@NotNull String nome) {
+        this.usuario_nome = nome;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setSenha(@NotNull String senha) {
+        this.usuario_senha = senha;
     }
 
-    public void setPremium(Boolean premium){
-        this.premium = premium;
+    public void setPremium(@NotNull boolean premium) {
+        this.usuario_premium = premium;
     }
 }
-

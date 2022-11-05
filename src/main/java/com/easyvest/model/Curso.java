@@ -1,8 +1,7 @@
 package com.easyvest.model;
 
-import java.util.List;
-
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "curso")
@@ -15,10 +14,11 @@ public class Curso {
     @Column(nullable = false, length = 50)
     private String curso_nome;
 
-    @ManyToMany(mappedBy = "campus_curso")
+    @ManyToMany(targetEntity = Campus.class)
     private List<Campus> campi;
 
-    public Curso() {}
+    public Curso() {
+    }
 
     public Long getId() {
         return curso_id;

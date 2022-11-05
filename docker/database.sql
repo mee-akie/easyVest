@@ -1,3 +1,4 @@
+-- Table: aulas
 CREATE TABLE aulas (
     aula_id serial  NOT NULL,
     aula_titulo varchar(50)  NOT NULL,
@@ -94,12 +95,12 @@ CREATE TABLE universidades_ingressos (
 
 -- Table: usuarios
 CREATE TABLE usuarios (
-    id serial  NOT NULL,
-    login varchar(30)  NOT NULL,
-    nome varchar(30)  NOT NULL,
-    senha varchar(200)  NOT NULL,
-    premium boolean  NOT NULL,
-    CONSTRAINT usuarios_pk PRIMARY KEY (id)
+    usuario_id serial  NOT NULL,
+    usuario_login varchar(30)  NOT NULL,
+    usuario_nome varchar(30)  NOT NULL,
+    usuario_senha varchar(200)  NOT NULL,
+    usuario_premium boolean  NOT NULL,
+    CONSTRAINT usuarios_pk PRIMARY KEY (usuario_id)
 );
 
 -- Table: vestibulares
@@ -115,103 +116,103 @@ CREATE TABLE vestibulares (
 -- Reference: aula_tema (table: aulas)
 ALTER TABLE aulas ADD CONSTRAINT aula_tema
     FOREIGN KEY (tema_id)
-    REFERENCES temas (tema_id)  
-    NOT DEFERRABLE 
+    REFERENCES temas (tema_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: campus_cursos_campus (table: campus_cursos)
 ALTER TABLE campus_cursos ADD CONSTRAINT campus_cursos_campus
     FOREIGN KEY (campus_id)
-    REFERENCES campus (campus_id)  
-    NOT DEFERRABLE 
+    REFERENCES campus (campus_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: campus_cursos_cursos (table: campus_cursos)
 ALTER TABLE campus_cursos ADD CONSTRAINT campus_cursos_cursos
     FOREIGN KEY (curso_id)
-    REFERENCES cursos (curso_id)  
-    NOT DEFERRABLE 
+    REFERENCES cursos (curso_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: campus_universidades (table: campus)
 ALTER TABLE campus ADD CONSTRAINT campus_universidades
     FOREIGN KEY (universidade_id)
-    REFERENCES universidades (universidade_id)  
-    NOT DEFERRABLE 
+    REFERENCES universidades (universidade_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: exercicios_temas (table: exercicios)
 ALTER TABLE exercicios ADD CONSTRAINT exercicios_temas
     FOREIGN KEY (tema_id)
-    REFERENCES temas (tema_id)  
-    NOT DEFERRABLE 
+    REFERENCES temas (tema_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: listas_disciplinas (table: listas)
 ALTER TABLE listas ADD CONSTRAINT listas_disciplinas
     FOREIGN KEY (disciplina_id)
-    REFERENCES disciplinas (disciplina_id)  
-    NOT DEFERRABLE 
+    REFERENCES disciplinas (disciplina_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: listas_exercicios_exercicios (table: listas_exercicios)
 ALTER TABLE listas_exercicios ADD CONSTRAINT listas_exercicios_exercicios
     FOREIGN KEY (exercicio_id)
-    REFERENCES exercicios (exercicio_id)  
-    NOT DEFERRABLE 
+    REFERENCES exercicios (exercicio_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: listas_exercicios_listas (table: listas_exercicios)
 ALTER TABLE listas_exercicios ADD CONSTRAINT listas_exercicios_listas
     FOREIGN KEY (lista_id)
-    REFERENCES listas (lista_id)  
-    NOT DEFERRABLE 
+    REFERENCES listas (lista_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: registro_agenda_temas (table: registro_agenda)
 ALTER TABLE registro_agenda ADD CONSTRAINT registro_agenda_temas
     FOREIGN KEY (tema_id)
-    REFERENCES temas (tema_id)  
-    NOT DEFERRABLE 
+    REFERENCES temas (tema_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: registro_agenda_usuarios (table: registro_agenda)
 ALTER TABLE registro_agenda ADD CONSTRAINT registro_agenda_usuarios
-    FOREIGN KEY (id)
-    REFERENCES usuarios (id)  
-    NOT DEFERRABLE 
+    FOREIGN KEY (usuario_id)
+    REFERENCES usuarios (usuario_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: temas_disciplinas (table: temas)
 ALTER TABLE temas ADD CONSTRAINT temas_disciplinas
     FOREIGN KEY (disciplina_id)
-    REFERENCES disciplinas (disciplina_id)  
-    NOT DEFERRABLE 
+    REFERENCES disciplinas (disciplina_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: universidades_ingressos_ingressos (table: universidades_ingressos)
 ALTER TABLE universidades_ingressos ADD CONSTRAINT universidades_ingressos_ingressos
     FOREIGN KEY (ingresso_id)
-    REFERENCES vestibulares (vestibular_id)  
-    NOT DEFERRABLE 
+    REFERENCES vestibulares (vestibular_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;
 
 -- Reference: universidades_ingressos_universidades (table: universidades_ingressos)
 ALTER TABLE universidades_ingressos ADD CONSTRAINT universidades_ingressos_universidades
     FOREIGN KEY (universidade_id)
-    REFERENCES universidades (universidade_id)  
-    NOT DEFERRABLE 
+    REFERENCES universidades (universidade_id)
+    NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;

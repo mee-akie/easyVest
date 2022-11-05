@@ -1,9 +1,8 @@
 package com.easyvest.model;
 
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
-
-import javax.persistence.*;
 
 @Entity
 @Table(name = "vestibular")
@@ -23,10 +22,11 @@ public class Vestibular {
     @Column(nullable = false, length = 100)
     private String vestibular_link;
 
-    @ManyToMany(mappedBy = "universidade_vestibular")
+    @ManyToMany(targetEntity = Universidade.class)
     private List<Universidade> universidades;
 
-    public Vestibular() {}
+    public Vestibular() {
+    }
 
     public Date getData() {
         return vestibular_data;
