@@ -39,22 +39,28 @@ toda a configuração do banco de dados já será feita. Ou seja, não há neces
 
 ## Curso
 
-- [GET] `/api/curso/listar` => ira fornecer uma lista (JSON) contendo os cursos existentes no
+- [GET] `/api/curso/listar` => ira fornecer uma lista (JSON) contendo os dados dos cursos existentes no
   banco de dados.
 - [GET] `/api/curso/{id}` => ira fornecer os dados (JSON) do curso com o ID fornecido no path da requisicao.
 
 ## Vestibular
 
-- [GET] `/api/vestibular/listar` => ira fornecer uma lista (JSON) contendo os vestibulares existentes no
+- [GET] `/api/vestibular/listar` => ira fornecer uma lista (JSON) contendo os dados dos vestibulares existentes no
   banco de dados.
 - [GET] `/api/vestibular/{id}` => ira fornecer os dados (JSON) do vestibular com o ID fornecido no path da requisicao.
 
 ## Universidade
 
-- [GET] `/api/universidade/listar` => ira fornecer uma lista (JSON) contendo as universidades existentes no
+- [GET] `/api/universidade/listar` => ira fornecer uma lista (JSON) contendo os dados das universidades existentes no
   banco de dados.
 - [GET] `/api/universidade/{id}` => ira fornecer os dados (JSON) do vestibular com o ID fornecido no path da requisicao.
 - [GET] `/api/universidade/listarCursos/{idUniversidade}` => ira fornecer os dados (JSON) dos cursos disponiveis da
   universidade cujo ID é fornecido no path da requisicao.
 - [GET] `/api/universidade/listarCampus/{idUniversidade}` => ira fornecer os dados (JSON) dos campus da universidade
   cujo ID é fornecido no path da requisicao.
+
+## Aula
+
+- [GET] `/api/aula/listar` => ira fornecer uma lista (JSON) contendo os dados das aulas existentes no
+  banco de dados.
+- [GET] `/api/aula/{id}` => ira fornecer os dados (JSON) da aula cujo ID é fornecido no path da requisicao.
