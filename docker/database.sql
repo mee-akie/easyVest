@@ -106,7 +106,7 @@ CREATE TABLE usuarios (
 -- Table: vestibulares
 CREATE TABLE vestibulares (
     vestibular_id serial  NOT NULL,
-    vestibular_nome varchar(20)  NOT NULL,
+    vestibular_nome varchar(100)  NOT NULL,
     vestibular_data date  NOT NULL,
     vestibular_link varchar(100)  NOT NULL,
     CONSTRAINT vestibulares_pk PRIMARY KEY (vestibular_id)
@@ -584,3 +584,13 @@ insert into campus_cursos (campus_id, curso_id) VALUES
 (9, 114),
 (9, 58),
 (9, 68);
+
+-- Table: vestibulares
+insert into vestibulares (vestibular_nome, vestibular_data, vestibular_link) VALUES
+('Fuvest - 1a fase', '2022-12-04', 'https://www.fuvest.br/'),
+('Fuvest - 2a fase - 1o dia', '2023-01-08', 'https://www.fuvest.br/'),
+('Fuvest - 2a fase - 2o dia', '2023-01-09', 'https://www.fuvest.br/'),
+('Comvest - 1a fase', '2022-11-06', 'https://www.comvest.unicamp.br/vest2023/F1/localf1/local.php'),
+('Comvest - 2a fase - 1o dia', '2022-12-11', 'https://www.comvest.unicamp.br/vest2023/F1/localf1/local.php'),
+('Comvest - 2a fase - 2o dia', '2022-12-12', 'https://www.comvest.unicamp.br/vest2023/F1/localf1/local.php');
+

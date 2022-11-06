@@ -1,6 +1,7 @@
 package com.easyvest.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -15,10 +16,11 @@ public class Vestibular {
     @Column
     private Long vestibular_id;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 100)
     private String vestibular_nome;
 
     @Column(nullable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date vestibular_data;
 
     @Column(nullable = false, length = 100)
