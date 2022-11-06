@@ -19,7 +19,7 @@ public class Lista {
     private Disciplina disciplina;
 
     @ManyToMany
-    @JoinTable(name = "lista_exercicio", joinColumns = @JoinColumn(name = "lista_id"), inverseJoinColumns = @JoinColumn(name = "exercicio_id"))
+    @JoinTable(name = "listas_exercicios", joinColumns = @JoinColumn(name = "lista_id"), inverseJoinColumns = @JoinColumn(name = "exercicio_id"))
     public List<Curso> exercicios;
 
     public Lista() {
@@ -47,5 +47,9 @@ public class Lista {
 
     public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
+    }
+
+    public void setExercicios(List<Curso> exercicios) {
+        this.exercicios = exercicios;
     }
 }

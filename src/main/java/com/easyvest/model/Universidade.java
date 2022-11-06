@@ -15,11 +15,8 @@ public class Universidade {
     @Column(nullable = false, length = 100)
     private String universidade_nome;
 
-    @OneToMany(mappedBy = "universidade")
-    private List<Campus> campi;
-
     @ManyToMany
-    @JoinTable(name = "universidade_vestibular", joinColumns = @JoinColumn(name = "universidade_id"), inverseJoinColumns = @JoinColumn(name = "vestibular_id"))
+    @JoinTable(name = "universidades_ingressos", joinColumns = @JoinColumn(name = "universidade_id"), inverseJoinColumns = @JoinColumn(name = "vestibular_id"))
     public List<Curso> vestibulares;
 
     public Universidade() {
@@ -31,10 +28,6 @@ public class Universidade {
 
     public String getNome() {
         return universidade_nome;
-    }
-
-    public List<Campus> getCampi() {
-        return campi;
     }
 
     public List<Curso> getVestibulares() {

@@ -21,7 +21,7 @@ public class Exercicio {
     @JoinColumn(name = "tema_id")
     private Tema tema;
 
-    @ManyToMany(targetEntity = Lista.class)
+    @ManyToMany(mappedBy = "exercicios")
     private List<Lista> listas;
 
     public Exercicio() {

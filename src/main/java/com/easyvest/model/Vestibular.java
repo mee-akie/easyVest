@@ -1,5 +1,7 @@
 package com.easyvest.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
@@ -22,7 +24,8 @@ public class Vestibular {
     @Column(nullable = false, length = 100)
     private String vestibular_link;
 
-    @ManyToMany(targetEntity = Universidade.class)
+    @ManyToMany(mappedBy = "vestibulares")
+    @JsonBackReference
     private List<Universidade> universidades;
 
     public Vestibular() {
