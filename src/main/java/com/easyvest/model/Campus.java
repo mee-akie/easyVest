@@ -1,6 +1,7 @@
 package com.easyvest.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,19 +12,19 @@ public class Campus {
     @Column
     private Long campus_id;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 200)
     private String campus_nome;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 200)
     private String campus_endereco;
 
     @ManyToOne
     @JoinColumn(name = "universidade_id")
     private Universidade universidade;
 
-    @ManyToMany
-    @JoinTable(name = "campus_curso", joinColumns = @JoinColumn(name = "campus_id"), inverseJoinColumns = @JoinColumn(name = "curso_id"))
-    public List<Curso> cursos;
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name = "campus_cursos", joinColumns = @JoinColumn(name = "campus_id"), inverseJoinColumns = @JoinColumn(name = "curso_id"))
+    public List<Curso> cursos = new ArrayList<>();
 
     public Campus() {
     }
@@ -58,5 +59,9 @@ public class Campus {
 
     public void setUniversidade(Universidade universidade) {
         this.universidade = universidade;
+    }
+
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
     }
 }

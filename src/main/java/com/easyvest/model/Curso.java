@@ -1,6 +1,9 @@
 package com.easyvest.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,11 +14,12 @@ public class Curso {
     @Column
     private Long curso_id;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 100)
     private String curso_nome;
 
-    @ManyToMany(targetEntity = Campus.class)
-    private List<Campus> campi;
+    @ManyToMany(mappedBy = "cursos")
+    @JsonBackReference
+    private List<Campus> campi = new ArrayList<>();
 
     public Curso() {
     }
@@ -34,5 +38,9 @@ public class Curso {
 
     public void setNome(String curso_nome) {
         this.curso_nome = curso_nome;
+    }
+
+    public void setCampi(List<Campus> campi) {
+        this.campi = campi;
     }
 }
