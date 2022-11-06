@@ -16,8 +16,8 @@ public class Universidade {
     private String universidade_nome;
 
     @ManyToMany
-    @JoinTable(name = "universidades_ingressos", joinColumns = @JoinColumn(name = "universidade_id"), inverseJoinColumns = @JoinColumn(name = "vestibular_id"))
-    public List<Curso> vestibulares;
+    @JoinTable(name = "universidades_ingressos", joinColumns = @JoinColumn(name = "universidade_id"), inverseJoinColumns = @JoinColumn(name = "ingresso_id"))
+    public List<Vestibular> vestibulares;
 
     public Universidade() {
     }
@@ -30,7 +30,7 @@ public class Universidade {
         return universidade_nome;
     }
 
-    public List<Curso> getVestibulares() {
+    public List<Vestibular> getVestibulares() {
         return vestibulares;
     }
 

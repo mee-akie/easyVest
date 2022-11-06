@@ -594,3 +594,11 @@ insert into vestibulares (vestibular_nome, vestibular_data, vestibular_link) VAL
 ('Comvest - 2a fase - 1o dia', '2022-12-11', 'https://www.comvest.unicamp.br/vest2023/F1/localf1/local.php'),
 ('Comvest - 2a fase - 2o dia', '2022-12-12', 'https://www.comvest.unicamp.br/vest2023/F1/localf1/local.php');
 
+-- Table: universidades_ingressos
+insert into universidades_ingressos (universidade_id, ingresso_id) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 4),
+(2, 5),
+(2, 6);
