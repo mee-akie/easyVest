@@ -24,7 +24,7 @@ public class Campus {
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "campus_cursos", joinColumns = @JoinColumn(name = "campus_id"), inverseJoinColumns = @JoinColumn(name = "curso_id"))
-    public List<Curso> cursos = new ArrayList<>();
+    private List<Curso> cursos = new ArrayList<>();
 
     public Campus() {
     }
