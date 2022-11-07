@@ -70,3 +70,9 @@ toda a configuração do banco de dados já será feita. Ou seja, não há neces
 - [GET] `/api/tema/listar` => ira fornecer uma lista (JSON) contendo os dados dos temas das disciplinas existentes no
   banco de dados.
 - [GET] `/api/tema/{id}` => ira fornecer os dados (JSON) do tema com o ID fornecido no path da requisicao.
+
+## Disciplina
+
+- [GET] `/api/disciplina/listar` => ira fornecer uma lista (JSON) contendo os dados das disciplinas existentes no
+  banco de dados.
+- [GET] `/api/disciplina/{id}` => ira fornecer os dados (JSON) da disciplina cujo ID é fornecido no path da requisicao.
