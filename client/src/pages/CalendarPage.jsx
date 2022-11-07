@@ -3,7 +3,7 @@ import React from "react";
 // Import components
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
-import { getAllUsers } from "../services/api";
+import { getAllUniversities, getAllUsers, getUser, getUserId } from "../services/api";
 
 const CalendarPage = () => {
 
