@@ -1,5 +1,7 @@
 package com.easyvest.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,9 +18,11 @@ public class Tema {
 
     @ManyToOne
     @JoinColumn(name = "disciplina_id")
+    @JsonBackReference
     private Disciplina disciplina;
 
     @OneToMany(mappedBy = "tema")
+    @JsonBackReference
     private List<Aula> aulas;
 
     @OneToMany(mappedBy = "tema")
