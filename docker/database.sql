@@ -1,7 +1,7 @@
 -- Table: aulas
 CREATE TABLE aulas (
     aula_id serial  NOT NULL,
-    aula_titulo varchar(50)  NOT NULL,
+    aula_titulo varchar(100)  NOT NULL,
     aula_link varchar(100)  NOT NULL,
     aula_canal varchar(30)  NOT NULL,
     tema_id int  NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE registro_agenda (
 -- Table: temas
 CREATE TABLE temas (
     tema_id serial  NOT NULL,
-    tema_nome varchar(30)  NOT NULL,
+    tema_nome varchar(60)  NOT NULL,
     disciplina_id int  NOT NULL,
     CONSTRAINT temas_pk PRIMARY KEY (tema_id)
 );
@@ -219,6 +219,17 @@ ALTER TABLE universidades_ingressos ADD CONSTRAINT universidades_ingressos_unive
 
 
 -------------- POPULACAO DO BANCO DE DADOS --------------
+
+
+-- Table: usuarios
+insert into usuarios (usuario_login, usuario_nome, usuario_senha, usuario_premium) VALUES
+('maria.luiza', 'Maria Luiza', 'marialuiza123', false),
+('justin.maclean01', 'Justin C. Maclean', '12345', true),
+('amanda.castro', 'Amanda Sousa Castro', 'c4str000', true),
+('kgomes', 'Kauan Castro Gomes', 'castro2g0m3s', false),
+('mari_ferreira', 'Marisa Dias Ferreira', '12345', false),
+('isa.souza', 'Isabela Castro Sousa', '12345', true),
+('renan_ferreira', 'Renan Ferreira Cavalcanti', 're12345', false);
 
 -- Table: universidades
 insert into universidades (universidade_nome) VALUES
@@ -602,3 +613,117 @@ insert into universidades_ingressos (universidade_id, ingresso_id) VALUES
 (2, 4),
 (2, 5),
 (2, 6);
+
+-- Table: disciplinas
+insert into disciplinas (disciplina_nome) VALUES
+('Matemática'),
+('Língua Portuguesa'),
+('Geografia'),
+('História'),
+('Física'),
+('Química'),
+('Inglês'),
+('Filosofia'),
+('Sociologia'),
+('Biologia');
+
+-- Table: temas
+insert into temas (tema_nome, disciplina_id) VALUES
+('Trigonometria', 1),
+('Geometria', 1),
+('Funções de 1o grau', 1),
+('Funções de 2o grau', 1),
+('Porcentagem', 1),
+('Estatística e Probabilidade', 1),
+('Prismas', 1),
+('Interpretação de texto', 2),
+('Interpretação de texto não verbal', 2),
+('Domínio da norma culta', 2),
+('Análise de discurso', 2),
+('Gêneros textuais', 2),
+('Figuras de linguagem', 2),
+('Relevo', 3),
+('Globalização', 3),
+('Urbanização', 3),
+('Energia elétrica', 3),
+('Clima', 3),
+('Teorias demográficas', 3),
+('Migrações internacionais', 3),
+('Antiguidade Clássica: Grécia e Roma Antiga', 4),
+('Feudalismo', 4),
+('Civilizações pré-colombianas: Incas, Maias e Astecas', 4),
+('Absolutismo', 4),
+('Revolução Francesa', 4),
+('Colonização mercantilista', 4),
+('Processo de Independência do Brasil', 4),
+('Segundo reinado: D. Pedro II', 4),
+('Era Vargas', 4),
+('Ditadura Militar', 4),
+('Energia', 5),
+('Mecânica', 5),
+('Eletricidade', 5),
+('Óptica', 5),
+('Termofísica', 5),
+('Leis de Newton', 5),
+('Correntes e potência elétrica', 5),
+('Fenômenos ondulatórios', 5),
+('Estequiometria', 6),
+('Funções inorgânicas', 6),
+('Termoquímica', 6),
+('Funções oxigenadas e nitrogenadas', 6),
+('Química Ambiental', 6),
+('Química Orgânica', 6),
+('Reações Orgânicas', 6),
+('Unidades de Concentração', 6),
+('Forças Intermoleculares', 6),
+('Substantivos contáveis e incontáveis', 7),
+('Tempos verbais em inglês', 7),
+('Voz passiva em inglês', 7),
+('Pronomes pessoais', 7),
+('Linking words', 7),
+('Ética e Justiça', 8),
+('Natureza do Conhecimento', 8),
+('Democracia e Cidadania', 8),
+('Filosofia Contemporânea', 8),
+('Filosofia Moderna', 8),
+('Mundo do trabalho', 9),
+('Cultura e indústria cultural', 9),
+('Meios de comunicação, tecnologia e cultura de massa', 9),
+('Ideologia', 9),
+('Cidadania', 9),
+('Movimentos sociais', 9),
+('Desigualdades sociais', 9),
+('Teorias Sociológicas', 9),
+('Ecologia', 10),
+('Evolução', 10),
+('Biomas', 10),
+('Genética', 10),
+('Ciclos biogeoquímicos', 10),
+('Fisiologia humana', 10);
+
+-- Table: aulas
+insert into aulas (aula_titulo, aula_link, aula_canal, tema_id) VALUES
+('Me Salva! TRG01 - Trigonometria - Noção intuitiva', 'https://youtu.be/j_qkYmhUHow', 'Me Salva!', 1),
+('Me Salva! TRG02 - Trigonometria - Unidades de medida da trigonometria e conversões', 'https://youtu.be/8Jky7RvNQnc', 'Me Salva!', 1),
+('Me Salva! TRG03 - Trigonometria - Círculo trigonométrico', 'https://youtu.be/-qVIXr-x0JA', 'Me Salva!', 1),
+('Me Salva! TRG04 - Trigonometria - Arcos côngruos', 'https://youtu.be/YYAfoqsHzkk', 'Me Salva!', 1),
+('Me Salva! TRG05 - Trigonometria - Funções seno e cosseno', 'https://youtu.be/LUZH0kgug8M', 'Me Salva!', 1),
+('Me Salva! TRG06 - Trigonometria - Funções tangente e secante', 'https://youtu.be/nhlRbWuJvsE', 'Me Salva!', 1),
+('Me Salva! GP01 - Ângulos complementares, suplementares e replementares', 'https://youtu.be/GsYeN1tDw1c', 'Me Salva!', 2),
+('Me Salva! GP02 - Teorema de Tales, definição e aplicação', 'https://youtu.be/tP0CdtMnR0Y', 'Me Salva!', 2),
+('Me Salva! GP03 - Geometria Plana - Ângulos entre retas concorrentes e transversais', 'https://youtu.be/IjhO_F6YepY', 'Me Salva!', 2),
+('Me Salva! GP05 - Geometria Plana - Polígonos Regulares definição e nomenclatura', 'https://youtu.be/swcFcJ8pRoo', 'Me Salva!', 2),
+('Me Salva! PRC07 - Funções de primeiro grau', 'https://youtu.be/KB7NezH1ZK4', 'Me Salva!', 3),
+('Me Salva! PRC09 - Funções de segundo grau', 'https://youtu.be/Nx6oLGKWzBA', 'Me Salva!', 4),
+('Me Salva! FIN04 - Porcentagem: teoria, taxa percentual, proporção e taxa decimal', 'https://youtu.be/jNDdP9d6lr0', 'Me Salva!', 5),
+('Me Salva! INEST03 - Médias', 'https://youtu.be/uNe81VZvqJg', 'Me Salva!', 6),
+('Me Salva! INEST05 - Amplitude e Variância', 'https://youtu.be/Cq_a5ySEClk', 'Me Salva!', 6),
+('Me Salva! PBB01 - Conceitos Iniciais de Probabilidade', 'https://youtu.be/eFyAyz6Xy6g', 'Me Salva!', 6),
+('Me Salva! PBB02 - Eventos e Combinações', 'https://youtu.be/_dPD-_S0aY8', 'Me Salva!', 6),
+('Me Salva! DPB05 - Distribuição Normal (Aula I)', 'https://youtu.be/MoGes4OzsIk', 'Me Salva!', 6),
+('Me Salva! EPA01 - Introdução à Estimação de Parâmetros', 'https://youtu.be/V0xQcRMU-zE', 'Me Salva!', 6),
+('Me Salva! EPA02 - Conceito de Erro Amostral', 'https://youtu.be/xesxrMUBgNk', 'Me Salva!', 6),
+('Me Salva! EPA16 - Exercício do Método da Máxima Verossimilhança', 'https://youtu.be/XylQQ_BawTU', 'Me Salva!', 6),
+('Me Salva! EPA20 - Intervalos de Confiança para a Média', 'https://youtu.be/26CkHyfOYq0', 'Me Salva!', 6),
+('Me Salva! GE01 - Geometria Espacial - Poliedros Regulares e Teorema de Euler', 'https://youtu.be/PDxmyRwntXg', 'Me Salva!', 7);
+

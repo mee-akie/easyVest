@@ -10,7 +10,7 @@ public class Aula {
     @Column
     private Long aula_id;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 100)
     private String aula_titulo;
 
     @Column(nullable = false, length = 100)

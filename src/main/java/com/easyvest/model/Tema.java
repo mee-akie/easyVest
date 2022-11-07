@@ -11,7 +11,7 @@ public class Tema {
     @Column
     private Long tema_id;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 60)
     private String tema_nome;
 
     @ManyToOne
