@@ -19,6 +19,26 @@ Basta rodar `docker-compose up` para subir o docker-compose. E rode `docker-comp
 Ao subir o docker-compose a aplicação do backend estará escutando em [http://localhost:8080/](http://localhost:8080/) e
 toda a configuração do banco de dados já será feita. Ou seja, não há necessidade de ter o banco de dados localmente.
 
+### Atualização das imagens dos containers
+
+A cada nova modificação feita no banco de dados e na aplicação backend é necessário atualizar as imagens de seus
+containers correspondentes.
+
+A primeira maneira é rodar o script `updateDockerfiles` rodando no terminal o comando: `bash updateDockerfiles`.
+
+A segunda maneira é rodar os seguintes comandos:
+
+`cd docker/`
+
+`docker build -t postgres-image -f Dockerfile.db .`
+
+
+`cd ..`
+
+`mvn clean package`
+
+`docker build -t easyvestbackend-image -f Dockerfile.backend .`
+
 # APIs
 
 ## Usuario
