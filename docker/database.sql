@@ -665,7 +665,9 @@ insert into vestibulares (vestibular_nome, vestibular_data, vestibular_link) VAL
 ('Fuvest - 2a fase - 2o dia', '2023-01-09', 'https://www.fuvest.br/'),
 ('Comvest - 1a fase', '2022-11-06', 'https://www.comvest.unicamp.br/vest2023/F1/localf1/local.php'),
 ('Comvest - 2a fase - 1o dia', '2022-12-11', 'https://www.comvest.unicamp.br/vest2023/F1/localf1/local.php'),
-('Comvest - 2a fase - 2o dia', '2022-12-12', 'https://www.comvest.unicamp.br/vest2023/F1/localf1/local.php');
+('Comvest - 2a fase - 2o dia', '2022-12-12', 'https://www.comvest.unicamp.br/vest2023/F1/localf1/local.php'),
+('Vunesp - 1a fase', '2022-11-15', 'https://www.vunesp.com.br/VNSP2206'),
+('Vunesp - 2a fase', '2022-12-19', 'https://www.vunesp.com.br/VNSP2206');
 
 -- Table: universidades_ingressos
 insert into universidades_ingressos (universidade_id, ingresso_id) VALUES
