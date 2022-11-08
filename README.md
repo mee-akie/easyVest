@@ -102,3 +102,10 @@ A segunda maneira é rodar os seguintes comandos:
 - [GET] `/api/exercicio/listar` => ira fornecer uma lista (JSON) contendo os exercicios de todos os campus existentes no
   banco de dados.
 - [GET] `/api/exercicio/{id}` => ira fornecer os dados (JSON) do exercicio com o ID fornecido no path da requisicao.
+
+## Lista de exercicio
+
+- [GET] `/api/lista/listar` => ira fornecer uma lista (JSON) contendo os dados das listas de exercicios existentes no
+  banco de dados.
+- [GET] `/api/lista/{id}` => ira fornecer os dados (JSON) da lista de exercicio cujo ID é fornecido no path da
+  requisicao.

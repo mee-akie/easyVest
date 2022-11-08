@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -25,7 +24,7 @@ public class AulaController {
      * Path: /api/aula/listar
      */
     @GetMapping("/listar")
-    public List<Aula> getAllClasses(HttpServletRequest request) {
+    public List<Aula> getAllClasses() {
         return repositorioAula.findAll();
     }
 
