@@ -338,7 +338,7 @@ insert into cursos (curso_nome) VALUES
 ('Bacharelado em Enfermagem'),
 ('Engenharia Ambiental'),
 ('Engenharia Civil'),
-('Engenharia de Computação'),
+('Engenharia da Computação'),
 ('Engenharia Metalúrgica, de Materiais e Nuclear'),
 ('Engenharia de Minas'),
 ('Engenharia de Petróleo'),
@@ -435,7 +435,25 @@ insert into cursos (curso_nome) VALUES
 ('Licenciatura em Pedagogia'),
 ('Informatica Biomedica'),
 ('Bacharelado de estatistica e ciencia de dados'),
-('Licenciatura em Ciencias Exatas');
+('Licenciatura em Ciencias Exatas'),
+('Engenharia de Telecomunicações'),
+('Engenharia de Transportes'),
+('Tecnologia em Análise e desenvolvimento de Sistemas'),
+('Tecmologia em Saneamento Ambiental'),
+('Administração Publica'),
+('Ciência do Esporte'),
+('Engenharia de Manufatura'),
+('Gestão'),
+('Biologia'),
+('Estudos da Linguagem'),
+('Geociências'),
+('Filosofia e Ciências Humanas'),
+('Ciências Farmacêuticas'),
+('Engenharia Agrícola'),
+('Midialogia'),
+('Dança'),
+('Ciências Médicas'),
+('Engenharia Elétrica');
 
 -- Table: campus_cursos
 insert into campus_cursos (campus_id, curso_id) VALUES
@@ -594,7 +612,51 @@ insert into campus_cursos (campus_id, curso_id) VALUES
 (9, 113),
 (9, 114),
 (9, 58),
-(9, 68);
+(9, 68),
+(10, 15),
+(10, 115),
+(10, 116),
+(10, 85),
+(10, 117),
+(10, 118),
+(11, 35),
+(11, 90),
+(11, 50),
+(11, 119),
+(11, 120),
+(11, 121),
+(11, 122),
+(12, 49),
+(13, 123),
+(13, 124),
+(13, 125),
+(13, 126),
+(13, 127),
+(13, 128),
+(13, 131),
+(13, 129),
+(13, 130),
+(13, 65),
+(13, 63),
+(13, 62),
+(13, 17),
+(13, 61),
+(13, 1),
+(13, 2),
+(13, 34),
+(13, 98),
+(13, 16),
+(13, 30),
+(13, 26),
+(13, 29),
+(13, 13),
+(13, 12),
+(13, 111),
+(13, 93),
+(13, 8),
+(13, 68),
+(13, 58),
+(13, 132);
 
 -- Table: vestibulares
 insert into vestibulares (vestibular_nome, vestibular_data, vestibular_link) VALUES
@@ -727,3 +789,14 @@ insert into aulas (aula_titulo, aula_link, aula_canal, tema_id) VALUES
 ('Me Salva! EPA20 - Intervalos de Confiança para a Média', 'https://youtu.be/26CkHyfOYq0', 'Me Salva!', 6),
 ('Me Salva! GE01 - Geometria Espacial - Poliedros Regulares e Teorema de Euler', 'https://youtu.be/PDxmyRwntXg', 'Me Salva!', 7);
 
+-- -- Table: exercicios
+-- insert into exercicios (exercicio_texto, tema_id, exercicio_resposta) VALUES
+
+-- -- Table: listas
+-- insert into listas (lista_nome, disciplina_id) VALUES
+
+-- -- Table: listas_exercicios
+-- insert into listas_exercicios (lista_id, exercicio_id) VALUES
+
+-- -- Table: registro_agenda
+-- insert into registro_agenda (usuario_id, registro_data, registro_duracao, tema_id) VALUES
