@@ -667,7 +667,12 @@ insert into vestibulares (vestibular_nome, vestibular_data, vestibular_link) VAL
 ('Comvest - 2a fase - 1o dia', '2022-12-11', 'https://www.comvest.unicamp.br/vest2023/F1/localf1/local.php'),
 ('Comvest - 2a fase - 2o dia', '2022-12-12', 'https://www.comvest.unicamp.br/vest2023/F1/localf1/local.php'),
 ('Vunesp - 1a fase', '2022-11-15', 'https://www.vunesp.com.br/VNSP2206'),
-('Vunesp - 2a fase', '2022-12-19', 'https://www.vunesp.com.br/VNSP2206');
+('Vunesp - 2a fase', '2022-12-19', 'https://www.vunesp.com.br/VNSP2206'),
+('Enem - 1o dia', '2022-11-13', 'https://enem.inep.gov.br/participante/#!/'),
+('Enem - 2o dia', '2022-11-20', 'https://enem.inep.gov.br/participante/#!/'),
+('Ita - 1a fase', '2022-10-16', 'https://www.vestibular.ita.br/'),
+('Ita - 2a fase - 1o dia', '2022-11-08', 'https://www.vestibular.ita.br/'),
+('Ita - 2a fase - 2o dia', '2022-11-09', 'https://www.vestibular.ita.br/');
 
 -- Table: universidades_ingressos
 insert into universidades_ingressos (universidade_id, ingresso_id) VALUES
