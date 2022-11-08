@@ -1,43 +1,45 @@
-# Build da aplicação
-
-## Frontend (SEM DOCKER)
-
-Rode
-
-1. `cd client/`
-
-2. `npm start`
-
-A aplicação estará escutando em [http://localhost:3000/](http://localhost:3000/)
-
-## Backend (COM DOCKER))
+# Build da aplicação COM DOCKER
 
 Instale o [docker](https://docs.docker.com/get-docker/) caso não o tenha.
 
 Basta rodar `docker-compose up` para subir o docker-compose. E rode `docker-compose down` para para-lo.
 
+No momento o docker-compose salva novos dados enviados para o banco de dados e do frontend (node_modules).
+
+Caso queira limpar esses dados basta utilizar `docker-compose down --volumes`. Desse modo, o banco de dados sera re-startado e contera as tabelas e os dados default (veja o arquivo 'docker/database.sql').
+
 Ao subir o docker-compose a aplicação do backend estará escutando em [http://localhost:8080/](http://localhost:8080/) e
 toda a configuração do banco de dados já será feita. Ou seja, não há necessidade de ter o banco de dados localmente.
 
-### Atualização das imagens dos containers
+Por fim, a aplicação do frontend estará escutando em [http://localhost:3000/](http://localhost:3000/)
 
-A cada nova modificação feita no banco de dados e na aplicação backend é necessário atualizar as imagens de seus
+## Atualização das imagens dos containers
+
+A cada nova modificação feita no banco de dados ou na aplicação backend ou na aplicação frontend é necessário atualizar as imagens de seus
 containers correspondentes.
 
-A primeira maneira é rodar o script `updateDockerfiles` rodando no terminal o comando: `bash updateDockerfiles`.
+A primeira maneira é rodar o script bash `updateDockerfiles` rodando no terminal o comando: `bash updateDockerfiles`.
 
 A segunda maneira é rodar os seguintes comandos:
+
+[Atualizar a imagem do banco de dados]
 
 `cd docker/`
 
 `docker build -t postgres-image -f Dockerfile.db .`
 
-
-`cd ..`
+[Atualizar a imagem da aplicação backend]
 
 `mvn clean package`
 
 `docker build -t easyvestbackend-image -f Dockerfile.backend .`
+
+[Atualizar a imagem da aplicação frontend]
+
+`cd client/`
+
+`docker build -t easyvestfrontend-image -f Dockerfile.frontend .`
+
 
 # APIs
 
