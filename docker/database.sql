@@ -413,7 +413,7 @@ insert into cursos (curso_nome) VALUES
 ('Engenharia de Materiais'),
 ('Engenharia de Produção'),
 ('Engenharia Física'),
-('Engenharia Química'),
+('Engenharia de Biotecnologia'),
 ('Licenciatura em Enfermagem'),
 ('Ciências dos Alimentos'),
 ('Ciências Econômicas'),
@@ -453,7 +453,8 @@ insert into cursos (curso_nome) VALUES
 ('Midialogia'),
 ('Dança'),
 ('Ciências Médicas'),
-('Engenharia Elétrica');
+('Engenharia Elétrica'),
+('Engenharia de Bioprocessos e Biotecnologia');
 
 -- Table: campus_cursos
 insert into campus_cursos (campus_id, curso_id) VALUES
@@ -549,7 +550,7 @@ insert into campus_cursos (campus_id, curso_id) VALUES
 (4, 89),
 (4, 90),
 (4, 91),
-(4, 92),
+(4, 29),
 (5, 78),
 (5, 14),
 (5, 93),
@@ -656,7 +657,26 @@ insert into campus_cursos (campus_id, curso_id) VALUES
 (13, 8),
 (13, 68),
 (13, 58),
-(13, 132);
+(13, 132),
+(14, 48),
+(15, 49),
+(16, 32),
+(16, 133),
+(17, 119),
+(17, 95),
+(17, 38),
+(17, 42),
+(17, 37),
+(18, 49),
+(19, 68),
+(19, 72),
+(19, 29),
+(19, 73),
+(20, 55),
+(20, 92),
+(20, 41),
+(20, 42),
+(20, 67);
 
 -- Table: vestibulares
 insert into vestibulares (vestibular_nome, vestibular_data, vestibular_link) VALUES
