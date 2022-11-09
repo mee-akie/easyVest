@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 
 // Import data
-import { usp_data, general_data, enem_data, ifsp_data, ita_data, ufabc_data, ufscar_data, unesp_data, unicamp_data, unifesp_data } from "../data/universities";
+import { usp_data, general_data, enem_data, ita_data, ufabc_data, ufscar_data, unesp_data, unicamp_data, unifesp_data } from "../data/universities";
 
 import "../css/pages/UniversitiesPage.css";
 
@@ -33,7 +33,6 @@ const UniversitiesPage = () => {
                             <div className="uni-menu-item" onClick={() => handleChange(usp_data)}>USP</div>
                             <div className="uni-menu-item" onClick={() => handleChange(ufscar_data)}>UFSCAR</div>
                             <div className="uni-menu-item" onClick={() => handleChange(unicamp_data)}>UNICAMP</div>
-                            <div className="uni-menu-item" onClick={() => handleChange(ifsp_data)}>IFSP</div>
                             <div className="uni-menu-item" onClick={() => handleChange(unesp_data)}>UNESP</div>
                             <div className="uni-menu-item" onClick={() => handleChange(unifesp_data)}>UNIFESP</div>
                             <div className="uni-menu-item" onClick={() => handleChange(ita_data)}>ITA</div>
