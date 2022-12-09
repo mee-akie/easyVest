@@ -24,6 +24,7 @@ const CalendarPage = () => {
                         <div className="calendar-wrapper">
                             <Calendar events={events}></Calendar>
                         </div>
+                        <div>a</div>
                     </div> 
                 </div>
             </div>
