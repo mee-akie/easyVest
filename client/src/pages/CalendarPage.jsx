@@ -1,11 +1,17 @@
 import React from "react";
+import {useState} from "react";
 
 // Import components
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
-import { getAllUniversities, getAllUsers, getUser, getUserId } from "../services/api";
+import Calendar from "../components/Calendar";
+
+import '../css/pages/CalendarPage.css'
+
 
 const CalendarPage = () => {
+
+    const [events, setEvents] = useState([])
 
     return (
         <div class="wrapper">
@@ -14,6 +20,11 @@ const CalendarPage = () => {
                 <Header />
                 <div className="page-content">
                     <h2>Agenda</h2>
+                    <div className="agenda-page-wrapper">
+                        <div className="calendar-wrapper">
+                            <Calendar events={events}></Calendar>
+                        </div>
+                    </div> 
                 </div>
             </div>
         </div>

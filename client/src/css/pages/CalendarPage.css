@@ -1,0 +1,13 @@
+.agenda-page-wrapper > *{
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.agenda-menu-wrapper{
+    padding: 20px 0px;
+}
+
+.agenda-menu-wrapper > *{
+    display:inline-block;
+    vertical-align:middle;
+}
