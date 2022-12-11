@@ -1,29 +1,31 @@
 import React from "react";
 import styled from "styled-components";
-
+import { GetAllCourses } from "../services/api"
 import SearchDropdown from "../components/SearchDropdown";
 
-const courses = [
-	{ label: 'AAAaaaa', value: 'AAAaaaa' },
-	{ label: 'AAAaaaa', value: 'AAAaaaa' },
-	{ label: 'AAAaaaa', value: 'AAAaaaa' }
-];
+function createDataOptions(data) {
+	let options = []
 
-const city = [
-	{ label: 'AAAaaaa', value: 'AAAaaaa' },
-	{ label: 'AAAaaaa', value: 'AAAaaaa' },
-	{ label: 'AAAaaaa', value: 'AAAaaaa' }
-];
+	if (data != null){
+		data.forEach(element => {
+			options.push({ label: element.nome, value: element.nome })
+		});
+	}
 
-const SearchUniversities = () => {
+	return options
+}
 
-    return(
-			<Container>
-				<h3>Busque universidades por:</h3>
-				<SearchDropdown title='Curso de graduação (opcional)' options={courses}/>
-				<SearchDropdown title='Cidade (opcional)' options={city}/>
-			</Container>
-    )
+const SearchUniversities = () => {	
+	const courses = createDataOptions(GetAllCourses())
+	const city = createDataOptions(GetAllCourses())
+
+	return(
+		<Container>
+			<h3>Busque universidades por:</h3>
+			<SearchDropdown title='Curso de graduação (opcional)' options={courses}/>
+			<SearchDropdown title='Cidade (opcional)' options={city}/>
+		</Container>
+	)
 }
 
 const Container = styled.div`
