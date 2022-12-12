@@ -10,6 +10,7 @@ const SearchDropdown = (props) => {
 					<Select
 						closeMenuOnSelect={false}
 						options={props.options}
+						defaultValue={{ label: "-- Select --", value: 0 }}
 					/>
 			</Container>
     )

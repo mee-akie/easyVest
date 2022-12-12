@@ -1,23 +1,47 @@
 import React from "react";
 import styled from "styled-components";
-import { GetAllCourses } from "../services/api"
+import { GetAllCourses, GetAllCampus } from "../services/api"
 import SearchDropdown from "../components/SearchDropdown";
 
-function createDataOptions(data) {
+function createCoursesOptions(data) {
 	let options = []
 
 	if (data != null){
+		options.push({ label: "-- Select --", value: 0 })
+
 		data.forEach(element => {
-			options.push({ label: element.nome, value: element.nome })
+			options.push({ label: element.nome, value: element.id })
 		});
 	}
 
-	return options
+	return options.sort()
 }
 
-const SearchUniversities = () => {	
-	const courses = createDataOptions(GetAllCourses())
-	const city = createDataOptions(GetAllCourses())
+function createCityOptions(data) {
+	let options = []
+
+	if (data != null){
+
+		// remove repeat data
+		let uniqueData = []
+		data.forEach(element => {
+			uniqueData.push(element.campus_cidade)
+		});
+		uniqueData = [...new Set(uniqueData)]
+
+		options.push({ label: "-- Select --", value: 0 })
+
+		uniqueData.forEach(element => {
+			options.push({ label: element, value: element })
+		});
+	}
+
+	return options.sort()
+}
+
+const SearchUniversities = () => {
+	const courses = createCoursesOptions(GetAllCourses())
+	const city = createCityOptions(GetAllCampus())
 
 	return(
 		<Container>
