@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { GetAllCourses, GetAllCampus } from "../services/api"
+import { getAllCourses, getAllCampi } from "../services/api"
 import SearchDropdown from "../components/SearchDropdown";
 
 function createCoursesOptions(data) {
@@ -56,8 +56,8 @@ function sortOptionsByLabel(options) {
 }
 
 const SearchUniversities = () => {
-	const courses = createCoursesOptions(GetAllCourses())
-	const city = createCityOptions(GetAllCampus())
+	const courses = createCoursesOptions(getAllCourses())
+	const city = createCityOptions(getAllCampi())
 
 	return(
 		<Container>
