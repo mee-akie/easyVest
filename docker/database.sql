@@ -65,7 +65,7 @@ CREATE TABLE listas_exercicios (
 -- Table: registro_agenda
 CREATE TABLE registro_agenda (
     usuario_id int  NOT NULL,
-    registro_id int NOT NULL,
+    registro_data timestamp NOT NULL,
     registro_inicio timestamp  NOT NULL,
     registro_fim timestamp  NOT NULL,
     registro_nome varchar(45)  NOT NULL,
