@@ -10,7 +10,7 @@ export const getUser = async (id) => {
 }
 
 export function GetAllUniversities() {
-	const [data, setData] = React.useState(null);
+	const [data, setData] = useState(null);
 
   React.useEffect(() => {
     axios.get('/api/universidade/listar').then((response) => {
@@ -22,7 +22,7 @@ export function GetAllUniversities() {
 }
 
 export function GetAllCourses() {
-  const [data, setData] = React.useState(null);
+  const [data, setData] = useState(null);
 
   React.useEffect(() => {
     axios.get('/api/curso/listar').then((response) => {
@@ -34,7 +34,7 @@ export function GetAllCourses() {
 }
 
 export function GetAllCampus() {
-	const [data, setData] = React.useState(null);
+	const [data, setData] = useState(null);
 
   React.useEffect(() => {
     axios.get('/api/campus/listar').then((response) => {

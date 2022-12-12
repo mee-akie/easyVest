@@ -14,7 +14,7 @@ function createCoursesOptions(data) {
 		});
 	}
 
-	return options.sort()
+	return sortOptionsByLabel(options)
 }
 
 function createCityOptions(data) {
@@ -36,7 +36,23 @@ function createCityOptions(data) {
 		});
 	}
 
-	return options.sort()
+	return sortOptionsByLabel(options)
+}
+
+function sortOptionsByLabel(options) {
+	return options.sort(function(a, b) {
+		const nameA = a.label.toUpperCase();
+		const nameB = b.label.toUpperCase();
+		
+		if (nameA < nameB) {
+			return -1;
+		}
+		if (nameA > nameB) {
+			return 1;
+		}
+	
+		return 0;
+	})
 }
 
 const SearchUniversities = () => {
