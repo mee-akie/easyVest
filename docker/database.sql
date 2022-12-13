@@ -64,12 +64,12 @@ CREATE TABLE listas_exercicios (
 
 -- Table: registro_agenda
 CREATE TABLE registro_agenda (
+    registro_id serial NOT NULL,
     usuario_id int  NOT NULL,
-    registro_data timestamp NOT NULL,
     registro_inicio timestamp  NOT NULL,
     registro_fim timestamp  NOT NULL,
     registro_nome varchar(45)  NOT NULL,
-    CONSTRAINT registro_agenda_pk PRIMARY KEY (usuario_id,registro_data)
+    CONSTRAINT registro_agenda_pk PRIMARY KEY (registro_id)
 );
 
 -- Table: temas
