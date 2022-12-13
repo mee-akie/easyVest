@@ -23,6 +23,7 @@ public class Aula {
     @JoinColumn(name = "tema_id")
     private Tema tema;
 
+    // default constructor. Don't delete
     public Aula() {
     }
 

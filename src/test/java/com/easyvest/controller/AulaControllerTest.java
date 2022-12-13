@@ -4,7 +4,6 @@ import com.easyvest.exception.ResourceNotFoundException;
 import com.easyvest.model.Aula;
 import com.easyvest.model.Tema;
 import com.easyvest.repository.RepositorioAula;
-import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.ResponseEntity;
 
@@ -18,14 +17,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class AulaControllerTest {
-    private AulaController aulaController;
-    private RepositorioAula repositorioAula;
-
-    @Before
-    public void setUp() {
-        repositorioAula = mock(RepositorioAula.class);
-        aulaController = new AulaController(repositorioAula);
-    }
+    private final RepositorioAula repositorioAula = mock(RepositorioAula.class);
+    private final AulaController aulaController = new AulaController(repositorioAula);
 
     @Test
     public void testGetAllClasses() {
@@ -59,7 +52,6 @@ public class AulaControllerTest {
     @Test
     public void testGetAllClassesReturnEmptyList() {
         when(repositorioAula.findAll()).thenReturn(new ArrayList<>());
-
         List<Aula> allClasses = aulaController.getAllClasses();
 
         assertThat(allClasses.size()).isEqualTo(0);

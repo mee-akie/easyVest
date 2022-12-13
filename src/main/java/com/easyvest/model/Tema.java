@@ -28,6 +28,7 @@ public class Tema {
     @OneToMany(mappedBy = "tema")
     private List<Exercicio> exercicios;
 
+    // default constructor. Don't delete
     public Tema() {
     }
 

@@ -20,6 +20,7 @@ public class Disciplina {
     @OneToMany(mappedBy = "disciplina")
     private List<Lista> listas;
 
+    // default constructor. Don't delete
     public Disciplina() {
     }
 

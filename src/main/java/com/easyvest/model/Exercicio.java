@@ -24,6 +24,7 @@ public class Exercicio {
     @ManyToMany(mappedBy = "exercicios")
     private List<Lista> listas;
 
+    // default constructor. Don't delete
     public Exercicio() {
     }
 

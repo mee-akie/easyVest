@@ -19,6 +19,7 @@ public class Universidade {
     @JoinTable(name = "universidades_ingressos", joinColumns = @JoinColumn(name = "universidade_id"), inverseJoinColumns = @JoinColumn(name = "ingresso_id"))
     public List<Vestibular> vestibulares;
 
+    // default constructor. Don't delete
     public Universidade() {
     }
 

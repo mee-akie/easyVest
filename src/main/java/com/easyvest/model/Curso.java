@@ -21,6 +21,7 @@ public class Curso {
     @JsonBackReference
     private List<Campus> campi = new ArrayList<>();
 
+    // default constructor. Don't delete
     public Curso() {
     }
 

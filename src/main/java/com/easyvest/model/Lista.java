@@ -22,6 +22,7 @@ public class Lista {
     @JoinTable(name = "listas_exercicios", joinColumns = @JoinColumn(name = "lista_id"), inverseJoinColumns = @JoinColumn(name = "exercicio_id"))
     public List<Curso> exercicios;
 
+    // default constructor. Don't delete
     public Lista() {
     }
 

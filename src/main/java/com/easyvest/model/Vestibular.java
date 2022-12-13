@@ -30,6 +30,7 @@ public class Vestibular {
     @JsonBackReference
     private List<Universidade> universidades;
 
+    // default constructor. Don't delete
     public Vestibular() {
     }
 
