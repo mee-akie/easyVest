@@ -23,6 +23,12 @@ public class Universidade {
     public Universidade() {
     }
 
+    public Universidade(Long universidade_id, String universidade_nome, List<Vestibular> vestibulares) {
+        this.universidade_id = universidade_id;
+        this.universidade_nome = universidade_nome;
+        this.vestibulares = vestibulares;
+    }
+
     public Long getId() {
         return universidade_id;
     }

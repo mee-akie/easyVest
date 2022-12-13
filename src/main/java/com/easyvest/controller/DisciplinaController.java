@@ -19,6 +19,10 @@ public class DisciplinaController {
     @Autowired
     private RepositorioDisciplina repositorioDisciplina;
 
+    public DisciplinaController(RepositorioDisciplina repositorioDisciplina) {
+        this.repositorioDisciplina = repositorioDisciplina;
+    }
+
     /**
      * <p>Lista todas as disciplinas registradas do banco de dados e informa os dados
      * de cada um. Os dados sao retornados em formato JSON.</p>

@@ -32,6 +32,14 @@ public class Tema {
     public Tema() {
     }
 
+    public Tema(Long tema_id, String tema_nome, Disciplina disciplina, List<Aula> aulas, List<Exercicio> exercicios) {
+        this.tema_id = tema_id;
+        this.tema_nome = tema_nome;
+        this.disciplina = disciplina;
+        this.aulas = aulas;
+        this.exercicios = exercicios;
+    }
+
     public Long getId() {
         return tema_id;
     }

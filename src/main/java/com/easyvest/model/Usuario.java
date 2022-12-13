@@ -29,6 +29,14 @@ public class Usuario {
     public Usuario() {
     }
 
+    public Usuario(Long usuario_id, String usuario_login, String usuario_nome, String usuario_senha, boolean usuario_premium) {
+        this.usuario_id = usuario_id;
+        this.usuario_login = usuario_login;
+        this.usuario_nome = usuario_nome;
+        this.usuario_senha = usuario_senha;
+        this.usuario_premium = usuario_premium;
+    }
+
     public Long getId() {
         return usuario_id;
     }

@@ -34,6 +34,14 @@ public class Vestibular {
     public Vestibular() {
     }
 
+    public Vestibular(Long vestibular_id, String vestibular_nome, Date vestibular_data, String vestibular_link, List<Universidade> universidades) {
+        this.vestibular_id = vestibular_id;
+        this.vestibular_nome = vestibular_nome;
+        this.vestibular_data = vestibular_data;
+        this.vestibular_link = vestibular_link;
+        this.universidades = universidades;
+    }
+
     public Date getData() {
         return vestibular_data;
     }

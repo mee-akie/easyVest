@@ -28,6 +28,14 @@ public class Exercicio {
     public Exercicio() {
     }
 
+    public Exercicio(Long exercicio_id, String exercicio_texto, Character exercicio_resposta, Tema tema, List<Lista> listas) {
+        this.exercicio_id = exercicio_id;
+        this.exercicio_texto = exercicio_texto;
+        this.exercicio_resposta = exercicio_resposta;
+        this.tema = tema;
+        this.listas = listas;
+    }
+
     public Long getId() {
         return exercicio_id;
     }

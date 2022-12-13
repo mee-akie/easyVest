@@ -18,6 +18,10 @@ public class UsuarioController {
     @Autowired
     private RepositorioUsuario repositorioUsuario;
 
+    public UsuarioController(RepositorioUsuario repositorioUsuario) {
+        this.repositorioUsuario = repositorioUsuario;
+    }
+
     /**
      * <p>Retorna uma lista com todos os usuarios existentes no banco de dados.</p>
      * Path: /api/usuario/listar

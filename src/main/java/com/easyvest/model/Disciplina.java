@@ -24,6 +24,13 @@ public class Disciplina {
     public Disciplina() {
     }
 
+    public Disciplina(Long disciplina_id, String disciplina_nome, List<Tema> temas, List<Lista> listas) {
+        this.disciplina_id = disciplina_id;
+        this.disciplina_nome = disciplina_nome;
+        this.temas = temas;
+        this.listas = listas;
+    }
+
     public Long getId() {
         return disciplina_id;
     }

@@ -25,6 +25,12 @@ public class Curso {
     public Curso() {
     }
 
+    public Curso(Long curso_id, String curso_nome, List<Campus> campi) {
+        this.curso_id = curso_id;
+        this.curso_nome = curso_nome;
+        this.campi = campi;
+    }
+
     public Long getId() {
         return curso_id;
     }
