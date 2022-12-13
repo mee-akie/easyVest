@@ -28,7 +28,7 @@ public class ListaController {
      * Path: /api/aula/listar
      */
     @GetMapping("/listar")
-    public List<Lista> getAllLists() {
+    public List<Lista> getAllExerciseLists() {
         return repositorioLista.findAll();
     }
 
