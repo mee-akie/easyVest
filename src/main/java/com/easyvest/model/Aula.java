@@ -26,6 +26,14 @@ public class Aula {
     public Aula() {
     }
 
+    public Aula(Long aula_id, String aula_titulo, String aula_link, String aula_canal, Tema tema) {
+        this.aula_id = aula_id;
+        this.aula_titulo = aula_titulo;
+        this.aula_link = aula_link;
+        this.aula_canal = aula_canal;
+        this.tema = tema;
+    }
+
     public Long getId() {
         return aula_id;
     }
