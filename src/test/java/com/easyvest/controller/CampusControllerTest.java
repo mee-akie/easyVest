@@ -83,7 +83,7 @@ public class CampusControllerTest {
     }
 
     @Test
-    public void testGetCampusByIdReturnException() throws ResourceNotFoundException {
+    public void testGetCampusByIdReturnException() {
         Exception exception = assertThrows(ResourceNotFoundException.class, () -> {
             campusController.getCampusByid(12L);
         });
