@@ -18,6 +18,10 @@ public class AulaController {
     @Autowired
     private RepositorioAula repositorioAula;
 
+    public AulaController(RepositorioAula repositorioAula) {
+        this.repositorioAula = repositorioAula;
+    }
+
     /**
      * <p>Lista todas as aulas registradas do banco de dados e informa os dados
      * de cada um. Os dados sao retornados em formato JSON.</p>

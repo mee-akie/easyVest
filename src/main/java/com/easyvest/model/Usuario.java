@@ -25,7 +25,16 @@ public class Usuario {
     @Column(nullable = false)
     private boolean usuario_premium;
 
+    // default constructor. Don't delete
     public Usuario() {
+    }
+
+    public Usuario(Long usuario_id, String usuario_login, String usuario_nome, String usuario_senha, boolean usuario_premium) {
+        this.usuario_id = usuario_id;
+        this.usuario_login = usuario_login;
+        this.usuario_nome = usuario_nome;
+        this.usuario_senha = usuario_senha;
+        this.usuario_premium = usuario_premium;
     }
 
     public Long getId() {
@@ -62,5 +71,11 @@ public class Usuario {
 
     public void setPremium(@NotNull boolean premium) {
         this.usuario_premium = premium;
+    }
+
+    @Override
+    public java.lang.String toString() {
+        return "id: " + usuario_id + " " +
+                "login: " + usuario_login;
     }
 }
