@@ -7,7 +7,7 @@ import Sidebar from "../components/Sidebar";
 const MapPage = () => {
 
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             <Sidebar />
             <div className="page-wrap">
                 <Header />
