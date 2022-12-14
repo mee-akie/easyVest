@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Import components
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
-import Simulado from "../components/Simulado";
+
+// Import data
+import { enem_simulados, usp_simulados, unicamp_simulados, unesp_simulados, ita_simulados } from "../data/simulados";
 
 import "../css/pages/QuestionsPage.css";
 
 const QuestionsPage = () => {
+
+    const [content, setContent] = useState(enem_simulados)
+
+    const handleChange = (data) => {
+        setContent(data)
+    }
 
     return (
         <div class="wrapper">
@@ -19,23 +27,16 @@ const QuestionsPage = () => {
 
                     <div className="uni-menu">
                         <div className="uni-menu-content">
-                            <div className="uni-menu-item">ENEM</div>
-                            <div className="uni-menu-item">UFABC</div>
-                            <div className="uni-menu-item">USP</div>
-                            <div className="uni-menu-item">UFSCAR</div>
-                            <div className="uni-menu-item">UNICAMP</div>
-                            <div className="uni-menu-item">UNESP</div>
-                            <div className="uni-menu-item">UNIFESP</div>
-                            <div className="uni-menu-item">ITA</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(enem_simulados)}>ENEM</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(usp_simulados)}>USP</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(unicamp_simulados)}>UNICAMP</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(unesp_simulados)}>UNESP</div>
+                            <div className="uni-menu-item" onClick={() => handleChange(ita_simulados)}>ITA</div>
                         </div>
                     </div>
 
-                    <div className="simulados-container">
-                        <Simulado simulado_name="Fuvest 2021" simulado_questions="/" simulado_answers="/"></Simulado>
-                        <Simulado simulado_name="Fuvest 2020" simulado_questions="/" simulado_answers="/"></Simulado>
-                        <Simulado simulado_name="Fuvest 2019" simulado_questions="/" simulado_answers="/"></Simulado>
-                        <Simulado simulado_name="Fuvest 2018" simulado_questions="/" simulado_answers="/"></Simulado>
-                        <Simulado simulado_name="Fuvest 2017" simulado_questions="/" simulado_answers="/"></Simulado>
+                    <div>
+                        {content}
                     </div>
 
                 </div>
