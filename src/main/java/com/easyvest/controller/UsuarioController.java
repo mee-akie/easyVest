@@ -8,7 +8,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -29,7 +28,7 @@ public class UsuarioController {
      * @return Uma lista (JSON) com todos os usuarios existentes no banco de dados.
      */
     @GetMapping("/listar")
-    public List<Usuario> getAllUsers(HttpServletRequest request) {
+    public List<Usuario> getAllUsers() {
         return repositorioUsuario.findAll();
     }
 
