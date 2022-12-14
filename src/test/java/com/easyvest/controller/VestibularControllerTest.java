@@ -4,7 +4,7 @@ import com.easyvest.exception.ResourceNotFoundException;
 import com.easyvest.model.Universidade;
 import com.easyvest.model.Vestibular;
 import com.easyvest.repository.RepositorioVestibular;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 
 import java.sql.Date;

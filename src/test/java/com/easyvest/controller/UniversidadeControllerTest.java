@@ -8,7 +8,7 @@ import com.easyvest.model.Vestibular;
 import com.easyvest.repository.RepositorioCampus;
 import com.easyvest.repository.RepositorioCurso;
 import com.easyvest.repository.RepositorioUniversidade;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;

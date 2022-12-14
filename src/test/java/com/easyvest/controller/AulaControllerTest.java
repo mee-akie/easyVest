@@ -4,7 +4,7 @@ import com.easyvest.exception.ResourceNotFoundException;
 import com.easyvest.model.Aula;
 import com.easyvest.model.Tema;
 import com.easyvest.repository.RepositorioAula;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;

@@ -13,11 +13,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>aplication</name>
 	<description>Demo project for Spring Boot</description>
+
 	<properties>
 		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
-	<dependencies>
 
+	<dependencies>
 		<!-- DEPENDENCIAS DO SPRING -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -75,7 +78,7 @@
 
 		<dependency>
 				<groupId>org.postgresql</groupId>
-				<artifactId>postgresql</artifactId>
+			<artifactId>postgresql</artifactId>
 		</dependency>
 
 		<!-- DEPENDENCIAS DO JUNIT -->
@@ -85,7 +88,14 @@
 			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
-    </dependencies>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>5.8.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -95,6 +105,12 @@
 				<configuration>
 					<excludeDevTools>false</excludeDevTools>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
 			</plugin>
 		</plugins>
 	</build>

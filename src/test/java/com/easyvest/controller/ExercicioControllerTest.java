@@ -5,7 +5,7 @@ import com.easyvest.model.Exercicio;
 import com.easyvest.model.Lista;
 import com.easyvest.model.Tema;
 import com.easyvest.repository.RepositorioExercicio;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;

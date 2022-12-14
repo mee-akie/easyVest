@@ -3,7 +3,7 @@ package com.easyvest.controller;
 import com.easyvest.exception.ResourceNotFoundException;
 import com.easyvest.model.Usuario;
 import com.easyvest.repository.RepositorioUsuario;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
