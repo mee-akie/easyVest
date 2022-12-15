@@ -1,12 +1,12 @@
 package com.easyvest.model;
 
-public class Login {
+public class LoginUsuario {
 
     private String login;
 
     private String senha;
 
-    public Login() {
+    public LoginUsuario() {
     }
 
     public String getLogin() {

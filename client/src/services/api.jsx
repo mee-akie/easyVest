@@ -24,6 +24,22 @@ export function getUserById(id) {
 	return GetApiData(`/api/usuario/${id}`)
 }
 
+export function GetUserByUsernamePassword(login, senha) {
+	const [data, setData] = useState(null);
+
+  useEffect(() => {
+		axios.post('api/usuario/login', {
+			"login": login,
+			"senha": senha
+		})
+			.then((response) => {
+      	setData(response.data);
+    	});
+  }, []);
+
+  return data
+}
+
 export function postAddUser(login, nome, senha) {
 	return axios.post('api/usuario/add', {
 		"login": login,
