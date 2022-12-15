@@ -29,7 +29,16 @@ public class Campus {
     @JoinTable(name = "campus_cursos", joinColumns = @JoinColumn(name = "campus_id"), inverseJoinColumns = @JoinColumn(name = "curso_id"))
     private List<Curso> cursos = new ArrayList<>();
 
+    // default constructor. Don't delete
     public Campus() {
+    }
+
+    public Campus(Long campus_id, String campus_nome, String campus_endereco, Universidade universidade, List<Curso> cursos) {
+        this.campus_id = campus_id;
+        this.campus_nome = campus_nome;
+        this.campus_endereco = campus_endereco;
+        this.universidade = universidade;
+        this.cursos = cursos;
     }
 
     public Long getId() {

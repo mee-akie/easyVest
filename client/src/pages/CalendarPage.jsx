@@ -14,7 +14,7 @@ const CalendarPage = () => {
     const [events, setEvents] = useState([])
 
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             <Sidebar />
             <div className="page-wrap">
                 <Header />
@@ -24,6 +24,7 @@ const CalendarPage = () => {
                         <div className="calendar-wrapper">
                             <Calendar events={events}></Calendar>
                         </div>
+                        <div>a</div>
                     </div> 
                 </div>
             </div>

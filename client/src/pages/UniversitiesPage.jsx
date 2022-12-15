@@ -20,7 +20,7 @@ const UniversitiesPage = () => {
     }
 
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             <Sidebar />
             <div className="page-wrap">
                 <Header />

@@ -22,7 +22,15 @@ public class Lista {
     @JoinTable(name = "listas_exercicios", joinColumns = @JoinColumn(name = "lista_id"), inverseJoinColumns = @JoinColumn(name = "exercicio_id"))
     public List<Curso> exercicios;
 
+    // default constructor. Don't delete
     public Lista() {
+    }
+
+    public Lista(Long lista_id, String lista_nome, Disciplina disciplina, List<Curso> exercicios) {
+        this.lista_id = lista_id;
+        this.lista_nome = lista_nome;
+        this.disciplina = disciplina;
+        this.exercicios = exercicios;
     }
 
     public Long getId() {

@@ -65,20 +65,13 @@ CREATE TABLE listas_exercicios (
 
 -- Table: registro_agenda
 CREATE TABLE registro_agenda (
+    registro_id serial NOT NULL,
     usuario_id int  NOT NULL,
-    registro_data timestamp  NOT NULL,
-    registro_duracao int  NOT NULL,
-    tema_id int  NOT NULL,
-    CONSTRAINT registro_agenda_pk PRIMARY KEY (usuario_id,registro_data)
-);
-/*CREATE TABLE registro_agenda (
-    usuario_id int  NOT NULL,
-    registro_id int NOT NULL,
     registro_inicio timestamp  NOT NULL,
     registro_fim timestamp  NOT NULL,
     registro_nome varchar(45)  NOT NULL,
-    CONSTRAINT registro_agenda_pk PRIMARY KEY (usuario_id,registro_data)
-);*/
+    CONSTRAINT registro_agenda_pk PRIMARY KEY (registro_id)
+);
 
 -- Table: temas
 CREATE TABLE temas (
@@ -182,14 +175,6 @@ ALTER TABLE listas_exercicios ADD CONSTRAINT listas_exercicios_exercicios
 ALTER TABLE listas_exercicios ADD CONSTRAINT listas_exercicios_listas
     FOREIGN KEY (lista_id)
     REFERENCES listas (lista_id)
-    NOT DEFERRABLE
-    INITIALLY IMMEDIATE
-;
-
--- Reference: registro_agenda_temas (table: registro_agenda)
-ALTER TABLE registro_agenda ADD CONSTRAINT registro_agenda_temas
-    FOREIGN KEY (tema_id)
-    REFERENCES temas (tema_id)
     NOT DEFERRABLE
     INITIALLY IMMEDIATE
 ;

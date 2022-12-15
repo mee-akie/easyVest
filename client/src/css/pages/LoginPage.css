@@ -1,0 +1,34 @@
+.login-page-wrap {
+    width: 100%;
+}
+
+.form-wrapper {
+    background-color: var(--azulClaro);
+    margin: 8% auto;
+    text-align: left;
+    font-size: 2.2ex;
+    max-width: 500px;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.swap-function > p {
+    font-size: 1.5ex;
+    margin: 0px;
+}
+
+.swap-function {
+    padding: 10px 0px;
+}
+
+.swap-text {
+    text-decoration: underline;
+}
+
+.swap-text:hover {
+    text-decoration: solid;
+    color: var(--azulEscuro);
+    cursor: pointer;
+    font-weight: bold;
+    transition-duration: 300ms;
+}

@@ -1,7 +1,5 @@
 package com.easyvest.model;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
 
 @Entity
@@ -25,7 +23,16 @@ public class Usuario {
     @Column(nullable = false)
     private boolean usuario_premium;
 
+    // default constructor. Don't delete
     public Usuario() {
+    }
+
+    public Usuario(Long usuario_id, String usuario_login, String usuario_nome, String usuario_senha, boolean usuario_premium) {
+        this.usuario_id = usuario_id;
+        this.usuario_login = usuario_login;
+        this.usuario_nome = usuario_nome;
+        this.usuario_senha = usuario_senha;
+        this.usuario_premium = usuario_premium;
     }
 
     public Long getId() {
@@ -48,19 +55,29 @@ public class Usuario {
         return usuario_premium;
     }
 
-    public void setLogin(@NotNull String login) {
-        this.usuario_login = login;
+    public void setUsuario_id(Long usuario_id) {
+        this.usuario_id = usuario_id;
     }
 
-    public void setNome(@NotNull String nome) {
-        this.usuario_nome = nome;
+    public void setUsuario_login(String usuario_login) {
+        this.usuario_login = usuario_login;
     }
 
-    public void setSenha(@NotNull String senha) {
-        this.usuario_senha = senha;
+    public void setUsuario_nome(String usuario_nome) {
+        this.usuario_nome = usuario_nome;
     }
 
-    public void setPremium(@NotNull boolean premium) {
-        this.usuario_premium = premium;
+    public void setUsuario_senha(String usuario_senha) {
+        this.usuario_senha = usuario_senha;
+    }
+
+    public void setUsuario_premium(boolean usuario_premium) {
+        this.usuario_premium = usuario_premium;
+    }
+
+    @Override
+    public java.lang.String toString() {
+        return "id: " + usuario_id + " " +
+                "login: " + usuario_login;
     }
 }

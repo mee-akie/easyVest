@@ -28,7 +28,9 @@ class Calendar extends Component {
         dp.clearSelection();
         if (!modal.result) { return; }
 
-        //cria evento no calendário
+        //const addResponse = await postAddRegistro(modal.result, args.start, args.end, )
+
+        //cria evento no calendário TO DO: adicionar com dados baseados no retorno da criação no banco
         dp.events.add({
           start: args.start,
           end: args.end,
@@ -44,6 +46,7 @@ class Calendar extends Component {
         const e = args.e;
         e.data.text = modal.result;
         dp.events.update(e);
+        //TO DO passar e.data como parâmetro para alteração no banco
       },
       events: props.events,
     };
