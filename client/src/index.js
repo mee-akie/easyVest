@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
 
 import "./css/Global.css";
 
@@ -17,13 +17,21 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 
 library.add(fas);
 
+const Private = ({children}) => {
+  const recoveredUser = localStorage.getItem('user')
+  if(recoveredUser == null || recoveredUser == ''){
+      return <Navigate to='/login'/>
+  }
+  return children
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
         <Route path="/" element={<StudentHome />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/calendar" element={<CalendarPage />} />
+        <Route path="/calendar" element={<Private><CalendarPage/></Private>} />
         <Route path="/universities" element={<UniversitiesPage />} />
         <Route path="/questions" element={<QuestionsPage />} />
         <Route path="/map" element={<MapPage />} />

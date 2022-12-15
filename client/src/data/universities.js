@@ -546,7 +546,7 @@ export const ufscar_data = () => {
                     <li><strong>Campus Sorocaba:</strong>Rod. João Leme dos Santos, km 110 - SP-264, Bairro do Itinga - Sorocaba</li>
                     <li><strong>Campus Lagoa do Sino:</strong>Rod. Lauri Simões de Barros, km 12 - SP-189, Bairro Aracaçu - Buri</li>
                 </ul>
-                <h3>Cusos disponíveis nos campus</h3>
+                <h3>Cursos disponíveis nos campus</h3>
                 <ul>
                     <li><strong>Araras:</strong></li>
                     <ul>
@@ -1055,7 +1055,7 @@ export const unifesp_data = () => {
                     <li><strong>Guarulhos</strong>: Estr. do Caminho Velho, 333 - Jardim Nova Cidade, Guarulhos - SP, 07252-312</li>
                     <li><strong>Zona Leste</strong>: Av. Jacu Pêssego, 2630 - Itaquera, São Paulo - SP, 08260-001</li>
                 </ul>
-                <h3>Cusos disponíveis nos campus</h3>
+                <h3>Cursos disponíveis nos campus</h3>
                 <ul>
                     <li><strong>São Paulo:</strong></li>
                     <ul>
@@ -1219,7 +1219,7 @@ export const ita_data = () => {
                 <p>
                 O ITA é um órgão integrante da Administração Federal Direta, como Instituição Federal de Ensino Superior (IFES), sob a jurisdição do Comando da Aeronáutica (COMAER), e, portanto, do Ministério da Defesa (MD). Relaciona-se com Ministério da Educação (MEC) nos assuntos de natureza geral de educação, pois as disposições legais previstas na legislação educacional e de magistério diretamente dirigidas ao MEC são extensivas ao ITA, no que couber. Mais detalhes sobre a constituição legal da instituição podem ser obtidos no Regulamento e Regimento do ITA.
                 </p>
-                <h3>Locais do campus:</h3>
+                <h3>Locais dos campus:</h3>
                 <ul>
                     <li>Praça Marechal Eduardo Gomes, 50 - Vila das Acacias, São José dos Campos - SP, 12228-900</li>
                 </ul>
