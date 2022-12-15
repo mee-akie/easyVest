@@ -18,6 +18,9 @@ public class Campus {
     @Column(nullable = false, length = 200)
     private String campus_endereco;
 
+    @Column(nullable = false, length = 100)
+    private String campus_cidade;
+
     @ManyToOne
     @JoinColumn(name = "universidade_id")
     private Universidade universidade;
@@ -58,6 +61,10 @@ public class Campus {
         return cursos;
     }
 
+    public String getCampus_cidade() {
+        return campus_cidade;
+    }
+
     public void setNome(String campus_nome) {
         this.campus_nome = campus_nome;
     }
@@ -72,5 +79,9 @@ public class Campus {
 
     public void setCursos(List<Curso> cursos) {
         this.cursos = cursos;
+    }
+
+    public void setCampus_cidade(String campus_cidade) {
+        this.campus_cidade = campus_cidade;
     }
 }

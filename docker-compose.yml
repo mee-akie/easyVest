@@ -37,22 +37,22 @@ services:
 
   ## Front end ##
   ## Comente esse trecho abaixo para ter apenas o backend e o banco de dados ##
-  easyvest-frontend:
-    image: "easyvestfrontend-image:latest"
-    container_name: "easyvest-frontend"
-    working_dir: /app
-    build:
-      context: ./client
-      dockerfile: Dockerfile.frontend
-    depends_on:
-      - easyvest-backend
-    ports:
-      - 3000:3000
-    volumes:
-      - /app/node_modules
-      - frontenddata:/app
+  # easyvest-frontend:
+  #   image: "easyvestfrontend-image:latest"
+  #   container_name: "easyvest-frontend"
+  #   working_dir: /app
+  #   build:
+  #     context: ./client
+  #     dockerfile: Dockerfile.frontend
+  #   depends_on:
+  #     - easyvest-backend
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - /app/node_modules
+  #     - frontenddata:/app
   ############################################################################
 
 volumes:
   pgdata:
-  frontenddata:
+  # frontenddata:
