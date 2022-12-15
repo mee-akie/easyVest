@@ -5,16 +5,24 @@ import {Formik, Form, Field} from "formik";
 import * as Yup from 'yup'
 
 import "../css/components/SignUpForm.css";
+import { postAddUser } from '../services/api';
 
 const SignUpForm = () => {
     const history = useNavigate();
 
+    const [error, setError] = useState({})
+    const [success, setSuccess] = useState(false)
+
     const handleSubmit = async (values) => {
         try{
-            console.log(values)
+            const resp = await postAddUser(values.usuario, values.nome, values.senha)
+            console.log(resp)
+            if(resp.status === 200) {
+                setSuccess(true)
+            } 
         }
         catch(err){
-            
+            setError(err)
         }
     }
 
@@ -28,6 +36,7 @@ const SignUpForm = () => {
     return(
         <div className='login-form-wrap'>
             <h2>SignUp</h2>
+            {success ? <p>Usuario criado com sucesso</p> : <></>}
             <Formik 
                 validationSchema={schema}
 

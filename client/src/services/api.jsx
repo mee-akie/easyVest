@@ -24,6 +24,15 @@ export function getUserById(id) {
 	return GetApiData(`/api/usuario/${id}`)
 }
 
+export function postAddUser(login, nome, senha) {
+	return axios.post('api/usuario/add', {
+		"login": login,
+		"nome": nome,
+		"premium": false,
+		"senha": senha
+	})
+}
+
 
 // UNIVERSITY API
 export function getAllUniversities() {
