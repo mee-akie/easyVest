@@ -34,7 +34,10 @@ export function GetUserByUsernamePassword(login, senha) {
 		})
 			.then((response) => {
       	setData(response.data);
-    	});
+    	})
+			.catch((e) => {
+			  // do something if login+senha doesn't match any user
+			})
   }, []);
 
   return data
