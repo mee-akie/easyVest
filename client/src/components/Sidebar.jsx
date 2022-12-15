@@ -13,6 +13,11 @@ const Sidebar = () => {
         history(_route)
     }
 
+    const handleLogout = () => {
+        localStorage.removeItem('u')
+        history('/')
+    }
+
     return (
         <div className="sidebar">
             <div className="sidebar-item" onClick={() => handleItemCLick('/')}>
@@ -39,6 +44,12 @@ const Sidebar = () => {
                 <FontAwesomeIcon icon="map-location-dot" />
                 <div>Mapa</div>
             </div>
+
+            {localStorage.getItem('u') !== null ?
+            <div className="sidebar-item" onClick={() => handleLogout('/')}>
+                <FontAwesomeIcon icon="fa-solid fa-right-from-bracket" />
+                <div>Logout</div>
+            </div> : <></>}
 
         </div>
     )
