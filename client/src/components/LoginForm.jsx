@@ -38,13 +38,13 @@ const LoginForm = () => {
             <form onSubmit={handleSubmit}>
                 <div className="form-input-wrap">
                     <label htmlFor='usuario'>Usuário:</label>
-                    <input name="usuario" type="text" className='login-input' placeholder='Usuário' onChange={handleChange}></input>
+                    <input id="loginUsuario" name="usuario" type="text" className='login-input' placeholder='Usuário' onChange={handleChange}></input>
                 </div>
                 <div className="form-input-wrap">
                     <label htmlFor='senha'>Senha:</label>
-                    <input name = "senha" type="password" className='login-input' placeholder='Senha' onChange={handleChange}></input>
+                    <input id="loginSenha" name = "senha" type="password" className='login-input' placeholder='Senha' onChange={handleChange}></input>
                 </div>
-                <button onClick={handleSubmit}>Login</button>
+                <button id="submitButton" onClick={handleSubmit}>Login</button>
             </form>
         </div>
     )
