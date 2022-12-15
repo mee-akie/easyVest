@@ -18,6 +18,10 @@ public class ExercicioController {
     @Autowired
     private RepositorioExercicio repositorioExercicio;
 
+    public ExercicioController(RepositorioExercicio repositorioExercicio) {
+        this.repositorioExercicio = repositorioExercicio;
+    }
+
     /**
      * <p>Lista todos os exercicios registrados do banco de dados e informa os dados
      * de cada um. Os dados sao retornados em formato JSON.</p>

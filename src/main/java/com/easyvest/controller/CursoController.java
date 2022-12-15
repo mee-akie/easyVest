@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -24,13 +23,18 @@ public class CursoController {
     @Autowired
     private RepositorioCampus repositorioCampus;
 
+    public CursoController(RepositorioCurso repositorioCurso, RepositorioCampus repositorioCampus) {
+        this.repositorioCurso = repositorioCurso;
+        this.repositorioCampus = repositorioCampus;
+    }
+
     /**
      * <p>Lista todos os cursos registrados do banco de dados e informa os dados
      * de cada um. Os dados sao retornados em formato JSON.</p>
      * Path: /api/curso/listar
      */
     @GetMapping("/listar")
-    public List<Curso> getAllCourses(HttpServletRequest request) {
+    public List<Curso> getAllCourses() {
         return repositorioCurso.findAll();
     }
 
