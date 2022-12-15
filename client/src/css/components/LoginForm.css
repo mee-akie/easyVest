@@ -1,0 +1,26 @@
+.login-input {
+    width: 100%;
+    border-radius: 5px;
+    border-style: hidden;
+    padding: 5px;
+}
+
+.form-input-wrap{
+    padding: 10px 0px;
+}
+
+button {
+    background-color: var(--azulEscuro);
+    font-size: 1.5ex;
+    border-radius: 10px;
+    border-style: none;
+    padding: 5px 10px;
+    color: var(--branco);
+}
+
+button:hover{
+    background-color: var(--branco);
+    color: var(--azulEscuro);
+    cursor: pointer;
+    transition-duration: 300ms;
+}

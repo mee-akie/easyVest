@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -20,13 +19,17 @@ public class CampusController {
     @Autowired
     private RepositorioCampus repositorioCampus;
 
+    public CampusController(RepositorioCampus repositorioCampus) {
+        this.repositorioCampus = repositorioCampus;
+    }
+
     /**
      * <p>Lista todos os campus registrados do banco de dados e informa os dados
      * de cada um. Os dados sao retornados em formato JSON.</p>
      * Path: /api/campus/listar
      */
     @GetMapping("/listar")
-    public List<Campus> getAllCampus(HttpServletRequest request) {
+    public List<Campus> getAllCampus() {
         return repositorioCampus.findAll();
     }
 

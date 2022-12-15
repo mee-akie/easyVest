@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -19,13 +18,17 @@ public class DisciplinaController {
     @Autowired
     private RepositorioDisciplina repositorioDisciplina;
 
+    public DisciplinaController(RepositorioDisciplina repositorioDisciplina) {
+        this.repositorioDisciplina = repositorioDisciplina;
+    }
+
     /**
      * <p>Lista todas as disciplinas registradas do banco de dados e informa os dados
      * de cada um. Os dados sao retornados em formato JSON.</p>
      * Path: /api/disciplina/listar
      */
     @GetMapping("/listar")
-    public List<Disciplina> getAllClasses(HttpServletRequest request) {
+    public List<Disciplina> getAllSubjects() {
         return repositorioDisciplina.findAll();
     }
 
@@ -35,7 +38,7 @@ public class DisciplinaController {
      * Path: /api/disciplina/{id}
      */
     @GetMapping("/{id}")
-    public ResponseEntity<Disciplina> getClassByid(@PathVariable long id) throws ResourceNotFoundException {
+    public ResponseEntity<Disciplina> getSubjectByid(@PathVariable long id) throws ResourceNotFoundException {
         Disciplina dadosDisciplina = repositorioDisciplina.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Disciplina com id '" + id + "' nao foi encontrado"));
         return ResponseEntity.ok().body(dadosDisciplina);

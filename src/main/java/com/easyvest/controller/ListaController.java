@@ -18,13 +18,17 @@ public class ListaController {
     @Autowired
     private RepositorioLista repositorioLista;
 
+    public ListaController(RepositorioLista repositorioLista) {
+        this.repositorioLista = repositorioLista;
+    }
+
     /**
      * <p>Lista todas as listas de exercicios registradas do banco de dados e informa os dados
      * de cada um. Os dados sao retornados em formato JSON.</p>
      * Path: /api/aula/listar
      */
     @GetMapping("/listar")
-    public List<Lista> getAllLists() {
+    public List<Lista> getAllExerciseLists() {
         return repositorioLista.findAll();
     }
 

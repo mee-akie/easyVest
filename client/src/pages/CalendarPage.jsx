@@ -14,7 +14,7 @@ const CalendarPage = () => {
     const [events, setEvents] = useState([])
 
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             <Sidebar />
             <div className="page-wrap">
                 <Header />
