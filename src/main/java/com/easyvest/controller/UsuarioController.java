@@ -1,6 +1,7 @@
 package com.easyvest.controller;
 
 import com.easyvest.exception.ResourceNotFoundException;
+import com.easyvest.model.Login;
 import com.easyvest.model.Usuario;
 import com.easyvest.repository.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,22 @@ public class UsuarioController {
         Usuario dadosUsuario = repositorioUsuario.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario com id '" + id + "' nao foi encontrado"));
         return ResponseEntity.ok().body(dadosUsuario);
+    }
+
+    @GetMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Usuario> getUserByUsernamePassword(@RequestBody Login dados) throws ResourceNotFoundException {
+        List<Usuario> todosUsuarios = repositorioUsuario.findAll();
+
+        String usuario_login = dados.getLogin();
+        String usuario_senha = dados.getSenha();
+
+        for (Usuario usuario : todosUsuarios) {
+            if (usuario.getLogin().equals(usuario_login) && usuario.getSenha().equals(usuario_senha)) {
+                return ResponseEntity.ok().body(usuario);
+            }
+        }
+
+        return ResponseEntity.notFound().build();
     }
 
     /**
