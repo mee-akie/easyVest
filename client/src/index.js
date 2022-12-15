@@ -18,9 +18,9 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 library.add(fas);
 
 const Private = ({children}) => {
-  const recoveredUser = localStorage.getItem('user')
+  const recoveredUser = localStorage.getItem('u')
   if(recoveredUser == null || recoveredUser == ''){
-      return <Navigate to='/login'/>
+      return <Navigate to='/login' replace={true}/>
   }
   return children
 }

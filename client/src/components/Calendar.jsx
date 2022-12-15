@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {DayPilot, DayPilotCalendar, DayPilotNavigator} from "@daypilot/daypilot-lite-react";
+import { deleteEvent, postAddEvent, putUpdateEvent } from '../services/api';
 
 const styles = {
   wrap: {
@@ -20,33 +21,45 @@ class Calendar extends Component {
     this.calendarRef = React.createRef();
     this.state = {
       viewType: "Week",
-      durationBarVisible: false,
+      durationBarVisible: true,
       timeRangeSelectedHandling: "Enabled",
       onTimeRangeSelected: async args => {
         const dp = this.calendar;
         const modal = await DayPilot.Modal.prompt("Create a new event:", "Event 1");
         dp.clearSelection();
         if (!modal.result) { return; }
-
-        //const addResponse = await postAddRegistro(modal.result, args.start, args.end, )
-
-        //cria evento no calendário TO DO: adicionar com dados baseados no retorno da criação no banco
-        dp.events.add({
-          start: args.start,
-          end: args.end,
-          id: DayPilot.guid(),
-          text: modal.result
+        try{
+          const userLogged = JSON.parse(localStorage.getItem('u'))
+          const addResponse = await postAddEvent(modal.result, args.start.value.replace('T', ' '), args.end.value.replace('T', ' '), userLogged.id, userLogged.premium, userLogged.nome, userLogged.senha, userLogged.login )
+          
+          dp.events.add({
+          start: addResponse.data.registro_inicio,
+          end: addResponse.data.registro_fim,
+          id: addResponse.data.registro_id,
+          text: addResponse.data.registro_nome
         });
+        }catch(err){
+
+        }
       },
       eventDeleteHandling: "Update",
+      onEventDelete: async args => {
+        const e = args.e
+        const userLogged = JSON.parse(localStorage.getItem('u'))
+        await deleteEvent(e.data.id, e.data.text, e.data.start.value.replace('T', ' '), e.data.end.value.replace('T', ' '), userLogged.id, userLogged.premium, userLogged.nome, userLogged.senha, userLogged.login)
+        console.log(args)
+      },
       onEventClick: async args => {
         const dp = this.calendar;
         const modal = await DayPilot.Modal.prompt("Update event text:", args.e.text());
         if (!modal.result) { return; }
         const e = args.e;
         e.data.text = modal.result;
+
+        const userLogged = JSON.parse(localStorage.getItem('u'))
+        await putUpdateEvent(e.data.id, e.data.text, e.data.start.value.replace('T', ' '), e.data.end.value.replace('T', ' '), userLogged.id, userLogged.premium, userLogged.nome, userLogged.senha, userLogged.login)
+
         dp.events.update(e);
-        //TO DO passar e.data como parâmetro para alteração no banco
       },
       events: props.events,
     };
@@ -58,19 +71,16 @@ class Calendar extends Component {
 
   componentDidMount() {
 
-    /*
-    event model
-        id: int,
-        text: String,
-        start: timestamp,
-        end: timestamp"
-    */
     const events = this.state.events;
-
+    
     const startDate = Date.now();
 
     this.calendar.update({startDate, events});
 
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.state.events = nextProps.events;
   }
 
   render() {

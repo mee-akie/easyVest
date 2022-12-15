@@ -25,22 +25,10 @@ export function getUserById(id) {
 }
 
 export function GetUserByUsernamePassword(login, senha) {
-	const [data, setData] = useState(null);
-
-  useEffect(() => {
-		axios.post('api/usuario/login', {
-			"login": login,
-			"senha": senha
-		})
-			.then((response) => {
-      	setData(response.data);
-    	})
-			.catch((e) => {
-			  // do something if login+senha doesn't match any user
-			})
-  }, [login, senha]);
-
-  return data
+  	return axios.post('api/usuario/login', {
+		"login": login,
+		"senha": senha
+	})
 }
 
 export function postAddUser(login, nome, senha) {
@@ -49,6 +37,58 @@ export function postAddUser(login, nome, senha) {
 		"nome": nome,
 		"premium": false,
 		"senha": senha
+	})
+}
+
+//CALENDAR API
+export function getEvents(id){
+	return axios.get(`/api/registro/listar/${id}`)
+}
+
+export function postAddEvent(registro_nome, registro_inicio, registro_fim, usuario_id, usuario_premium, usuario_nome, usuario_senha, usuario_login){
+	return axios.post('/api/registro/add', {
+		"registro_nome": registro_nome,
+		"registro_inicio": registro_inicio,
+		"registro_fim": registro_fim,
+		"usuario": {
+			"usuario_id": usuario_id,
+			"usuario_premium": usuario_premium,
+			"usuario_nome": usuario_nome,
+			"usuario_senha": usuario_senha,
+			"usuario_login": usuario_login
+    }
+	})
+}
+
+export function putUpdateEvent(registro_id, registro_nome, registro_inicio, registro_fim, usuario_id, usuario_premium, usuario_nome, usuario_senha, usuario_login){
+	return axios.put(`/api/registro/update/${registro_id}`, {
+		"registro_nome": registro_nome,
+		"registro_inicio": registro_inicio,
+		"registro_fim": registro_fim,
+		"usuario": {
+			"usuario_id": usuario_id,
+			"usuario_premium": usuario_premium,
+			"usuario_nome": usuario_nome,
+			"usuario_senha": usuario_senha,
+			"usuario_login": usuario_login
+    }
+	})
+}
+
+export function deleteEvent(registro_id, registro_nome, registro_inicio, registro_fim, usuario_id, usuario_premium, usuario_nome, usuario_senha, usuario_login){
+	return axios.delete(`/api/registro/delete`, {
+		data:{
+			"registro_id": registro_id,
+			"registro_nome": registro_nome,
+			"registro_inicio": registro_inicio,
+			"registro_fim": registro_fim,
+			"usuario": {
+				"usuario_id": usuario_id,
+				"usuario_premium": usuario_premium,
+				"usuario_nome": usuario_nome,
+				"usuario_senha": usuario_senha,
+				"usuario_login": usuario_login}
+		}
 	})
 }
 

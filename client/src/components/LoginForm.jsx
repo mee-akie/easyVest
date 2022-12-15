@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
 import "../css/components/LoginForm.css";
+import { GetUserByUsernamePassword } from '../services/api';
 
 const LoginForm = () => {
     const history = useNavigate();
@@ -13,15 +14,21 @@ const LoginForm = () => {
     const handleSubmit = async (e) => {
         try{
             e.preventDefault()
-            console.log(form)
+            const loginResponse = await GetUserByUsernamePassword(form.usuario, form.senha)
+            if(loginResponse.status === 200){
+                localStorage.setItem('u', JSON.stringify(loginResponse.data))
+                history('/calendar')
+            }
         }
         catch(err){
-            
+            if(err.response.status === 404)
+                setError('Usuário ou senha inválidos')
         }
     }
 
     const handleChange = (e) =>{
         setForm({...form, [e.target.name]: e.target.value})
+        setError('')
     }
 
     return(

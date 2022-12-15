@@ -24,3 +24,8 @@ button:hover{
     cursor: pointer;
     transition-duration: 300ms;
 }
+
+.error {
+    color: red;
+    font-size: 1.4ex;
+}
