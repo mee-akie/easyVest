@@ -74,8 +74,10 @@ public class UsuarioController {
         Usuario usuarioAlterado = repositorioUsuario.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario com id '" + id + "' nao foi encontrado"));
 
-        usuarioAlterado.setNome(dadosUsuario.getNome());
-        usuarioAlterado.setLogin(dadosUsuario.getLogin());
+        usuarioAlterado.setUsuario_nome(dadosUsuario.getNome());
+        usuarioAlterado.setUsuario_login(dadosUsuario.getLogin());
+        usuarioAlterado.setUsuario_premium(dadosUsuario.getPremium());
+        usuarioAlterado.setUsuario_senha(dadosUsuario.getSenha());
 
         repositorioUsuario.save(usuarioAlterado);
 
