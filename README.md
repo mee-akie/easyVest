@@ -111,3 +111,11 @@ A segunda maneira é rodar os seguintes comandos:
   banco de dados.
 - [GET] `/api/lista/{id}` => ira fornecer os dados (JSON) da lista de exercicio cujo ID é fornecido no path da
   requisicao.
+  
+  
+# Testes do front-end com Cypress
+  
+Na pasta client, rode `npm install cypress`.
+
+Em seguida, rode `npm test` para inicializar o Cypress. Na janela que abrir, selecione a opção de teste end-to-end e escolha um dos specs criados para teste (agenda_tests.cy.jsx, por exemplo).
+  
