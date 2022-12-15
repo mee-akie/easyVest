@@ -3,6 +3,8 @@ import React, { useState } from "react";
 // Import components
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
+import SearchUniversities from "../components/SearchUniversities";
+import SearchUniversitiesStyle from "../css/components/SearchUniversities.css"
 
 // Import data
 import { usp_data, general_data, enem_data, ita_data, ufabc_data, ufscar_data, unesp_data, unicamp_data, unifesp_data } from "../data/universities";
@@ -39,8 +41,9 @@ const UniversitiesPage = () => {
                         </div>
                     </div>
 
-                    <div>
-                        {content}
+                    <div className='rowC'>
+											<div>{content}</div>
+											<SearchUniversities/>
                     </div>
 
                 </div>
