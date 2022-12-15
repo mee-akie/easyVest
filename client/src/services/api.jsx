@@ -9,7 +9,7 @@ function GetApiData(path) {
     axios.get(path).then((response) => {
       setData(response.data);
     });
-  }, []);
+  }, [path]);
 
   return data
 }
@@ -38,7 +38,7 @@ export function GetUserByUsernamePassword(login, senha) {
 			.catch((e) => {
 			  // do something if login+senha doesn't match any user
 			})
-  }, []);
+  }, [login, senha]);
 
   return data
 }
