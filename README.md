@@ -1,44 +1,46 @@
-# Build da aplicação COM DOCKER
+# Build da aplicação
 
-Instale o [docker](https://docs.docker.com/get-docker/) caso não o tenha.
+## Requisitos
 
-Basta rodar `docker-compose up` para subir o docker-compose. E rode `docker-compose down` para para-lo.
+- Instale o [docker](https://docs.docker.com/get-docker/) caso não o tenha.
+- Instale o [node](https://nodejs.org/en/download/) caso não o tenha.
+- Criar as imagens dos containers da aplicação (backend). Para isso, rode os seguintes comandos em sequencia:
 
-No momento o docker-compose salva novos dados enviados para o banco de dados e do frontend (node_modules).
+  ```
+  cd docker/
 
-Caso queira limpar esses dados basta utilizar `docker-compose down --volumes`. Desse modo, o banco de dados sera re-startado e contera as tabelas e os dados default (veja o arquivo 'docker/database.sql').
+  docker build -t postgres-image -f Dockerfile.db .
 
-Ao subir o docker-compose a aplicação do backend estará escutando em [http://localhost:8080/](http://localhost:8080/) e
-toda a configuração do banco de dados já será feita. Ou seja, não há necessidade de ter o banco de dados localmente.
+  cd ..
 
-Por fim, a aplicação do frontend estará escutando em [http://localhost:3000/](http://localhost:3000/)
+  docker build -t easyvestbackend-image -f Dockerfile.backend .
+  ```
 
-## Atualização das imagens dos containers
+## Subir a aplicação (frontend e backend)
 
-A cada nova modificação feita no banco de dados ou na aplicação backend ou na aplicação frontend é necessário atualizar as imagens de seus
-containers correspondentes.
+### Backend
+Execute o seguinte comando para executar a aplicação backend:
 
-A primeira maneira é rodar o script bash `updateDockerfiles` rodando no terminal o comando: `bash updateDockerfiles`.
+```
+docker-compose up
+```
 
-A segunda maneira é rodar os seguintes comandos:
+E utilize o seguinte comando para remove-la:
 
-[Atualizar a imagem do banco de dados]
+```
+docker-compose down
+```
 
-`cd docker/`
+### Frontend
+Execute os seguintes comandos em sequencia para executar a aplicação frontend:
 
-`docker build -t postgres-image -f Dockerfile.db .`
+```
+cd /client
 
-[Atualizar a imagem da aplicação backend]
+npm start
+```
 
-`mvn clean package`
-
-`docker build -t easyvestbackend-image -f Dockerfile.backend .`
-
-[Atualizar a imagem da aplicação frontend]
-
-`cd client/`
-
-`docker build -t easyvestfrontend-image -f Dockerfile.frontend .`
+**A aplicação estará sendo executada em [http://localhost:3000/](http://localhost:3000/)**
 
 
 # APIs
