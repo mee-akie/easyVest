@@ -45,6 +45,8 @@ npm start
 
 # APIs
 
+Disponivel em [http://localhost:8080/](http://localhost:8080/)
+
 ## Usuario
 
 - [GET] `/api/usuario/listar` => ira fornecer uma lista (JSON) contendo os dados de todos os usuarios existentes no
