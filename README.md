@@ -15,6 +15,14 @@
 
   docker build -t easyvestbackend-image -f Dockerfile.backend .
   ```
+  
+- Instalar as dependencias do frontend. Para isso, rode os seguintes comandos em sequencia:
+
+  ```
+  cd client/
+  
+  npm install
+  ```
 
 ## Subir a aplicação (frontend e backend)
 
@@ -35,7 +43,7 @@ docker-compose down
 Execute os seguintes comandos em sequencia para executar a aplicação frontend:
 
 ```
-cd /client
+cd client/
 
 npm start
 ```
