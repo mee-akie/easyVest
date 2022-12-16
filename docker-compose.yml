@@ -34,6 +34,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=easyvestadmin
       - SPRING_DATASOURCE_PASSWORD=easyvestadmin
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    restart: always
 
   ## Front end ##
   ## Comente esse trecho abaixo para ter apenas o backend e o banco de dados ##
@@ -48,9 +49,10 @@ services:
   #     - easyvest-backend
   #   ports:
   #     - 3000:3000
-  #   volumes:
-  #     - /app/node_modules
-  #     - frontenddata:/app
+    # volumes:
+    #   - /app/node_modules
+    #   - frontenddata:/app
+    # restart: always
   ############################################################################
 
 volumes:

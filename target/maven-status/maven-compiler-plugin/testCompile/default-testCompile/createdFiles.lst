@@ -1,0 +1,10 @@
+com/easyvest/controller/TemaControllerTest.class
+com/easyvest/controller/CampusControllerTest.class
+com/easyvest/controller/ListaControllerTest.class
+com/easyvest/controller/VestibularControllerTest.class
+com/easyvest/controller/ExercicioControllerTest.class
+com/easyvest/controller/CursoControllerTest.class
+com/easyvest/controller/AulaControllerTest.class
+com/easyvest/controller/UsuarioControllerTest.class
+com/easyvest/controller/UniversidadeControllerTest.class
+com/easyvest/controller/DisciplinaControllerTest.class
